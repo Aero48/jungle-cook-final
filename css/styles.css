@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Caveat;
+  src: url(./fonts/Caveat-Regular.ttf);
+}
+@font-face {
+  font-family: CaveatBold;
+  src: url(./fonts/Caveat-Bold.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +18,60 @@ html, body {
 
 h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#website {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#app {
+  width: 1280px;
+}
+
+nav {
+  width: 1280px;
+  height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+nav .nav-logo {
+  width: 167px;
+  height: 55px;
+  background-image: url(../images/logo.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+nav .nav-links {
+  width: 551px;
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .nav-links a {
+  font-family: Caveat;
+  font-size: 25px;
+  color: #000;
+}
+nav .nav-links button {
+  width: 158px;
+  height: 52px;
+  border: none;
+  background-color: #FFD972;
+  font-family: Caveat;
+  font-size: 25px;
+  border-radius: 45px;
+  filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */

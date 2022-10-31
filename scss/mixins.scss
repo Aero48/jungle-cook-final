@@ -1,3 +1,11 @@
 @mixin button {
-    background-color:blue;
+    width: 158px;
+    height: 52px;
+    border: none;
+    background-color: $site-yellow;
+    font-family: Caveat;
+    font-size: 25px;
+    border-radius: 45px;
+    filter: drop-shadow(0 10px 6px rgba(0,0,0,.16));
+    cursor: pointer;
 }

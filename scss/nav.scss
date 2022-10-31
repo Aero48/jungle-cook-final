@@ -1,0 +1,35 @@
+nav {
+    width: $site-width;
+    height: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+
+    .nav-logo {
+        width: 167px;
+        height: 55px;
+        background-image: url(../images/logo.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .nav-links {
+        width: 551px;
+        height: 52px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            font-family: Caveat;
+            font-size: 25px;
+            color: $site-black;
+        }
+
+        button {
+            @include button;
+        }
+    }
+}

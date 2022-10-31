@@ -9,3 +9,14 @@ html, body {
 h1, h2, h3, h4, h5, h6, p {
  margin-bottom: 16px
 }
+a {
+    text-decoration: none;
+}
+#website {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#app {
+    width: $site-width;
+}
