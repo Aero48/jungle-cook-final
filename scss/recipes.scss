@@ -1,0 +1,17 @@
+.recipes-content {
+    width: 100%;
+    min-height: 500px;
+    padding: 0 107px;
+    padding-top: $nav-height;
+    background-image: linear-gradient(rgba($site-green, 0.8),rgba($site-green, 0.8)), url(../images/recipe-hero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h1 {
+        margin-top: 60px;
+        font-family: CaveatBold;
+        font-size: 25px;
+        letter-spacing: 3px;
+    }
+}
