@@ -1,3 +1,4 @@
+//Contains code for the most common button on the page
 @mixin button {
     width: 158px;
     height: 52px;
@@ -8,4 +9,11 @@
     border-radius: 45px;
     filter: drop-shadow(0 10px 6px rgba(0,0,0,.16));
     cursor: pointer;
+}
+
+//Contains code to automatically format background images in divs
+@mixin bgImg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

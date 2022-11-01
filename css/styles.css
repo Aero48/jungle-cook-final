@@ -6,6 +6,14 @@
   font-family: CaveatBold;
   src: url(./fonts/Caveat-Bold.ttf);
 }
+@font-face {
+  font-family: LatoBlack;
+  src: url(./fonts/Lato-Black.ttf);
+}
+@font-face {
+  font-family: Lato;
+  src: url(./fonts/Lato-Regular.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +25,6 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  margin-bottom: 16px;
   font-weight: normal;
 }
 
@@ -83,8 +90,8 @@ nav .nav-links button {
   padding: 0 107px;
   padding-top: 132px;
   background-image: linear-gradient(rgba(167, 232, 189, 0.8), rgba(167, 232, 189, 0.8)), url(../images/recipe-hero.jpg);
-  background-position: center;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
 .recipes-content h1 {
@@ -92,6 +99,64 @@ nav .nav-links button {
   font-family: CaveatBold;
   font-size: 25px;
   letter-spacing: 3px;
+  margin-bottom: 50px;
+}
+.recipes-content .recipe-list {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
+}
+.recipes-content .recipe-list .recipe-list-item {
+  width: 524px;
+  height: 263px;
+  display: flex;
+}
+.recipes-content .recipe-list .recipe-list-item .recipe-list-img {
+  width: 300px;
+  height: 263px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.recipes-content .recipe-list .recipe-list-item .recipe-list-text {
+  width: 224px;
+  height: 263px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+.recipes-content .recipe-list .recipe-list-item .recipe-list-text h2 {
+  width: 130px;
+  font-family: LatoBlack;
+  font-size: 15px;
+  border-bottom: solid 3px #000;
+  letter-spacing: 1px;
+}
+.recipes-content .recipe-list .recipe-list-item .recipe-list-text p {
+  width: 138px;
+  font-family: Lato;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.recipes-content .recipe-list .recipe-list-item .recipe-list-text .recipe-list-info {
+  width: 90px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.recipes-content .recipe-list .recipe-list-item .recipe-list-text .recipe-list-info img {
+  width: 24px;
 }
 
 /*# sourceMappingURL=styles.css.map */

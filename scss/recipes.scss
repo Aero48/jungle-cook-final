@@ -4,14 +4,72 @@
     padding: 0 107px;
     padding-top: $nav-height;
     background-image: linear-gradient(rgba($site-green, 0.8),rgba($site-green, 0.8)), url(../images/recipe-hero.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @include bgImg;
 
     h1 {
         margin-top: 60px;
         font-family: CaveatBold;
         font-size: 25px;
         letter-spacing: 3px;
+        margin-bottom: 50px;
+    }
+
+    .recipe-list {
+        width: 100%;
+        min-height: 200px;
+
+        display: flex;
+        justify-content: space-between;
+        //justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+
+        padding-bottom: 100px;
+        .recipe-list-item {
+            width: 524px;
+            height: 263px;
+            display: flex;
+            .recipe-list-img {
+                width: 300px;
+                height: 263px;
+                border-radius: 20px;
+                @include bgImg;
+            }
+            .recipe-list-text {
+                width: 224px;
+                height: 263px;
+                background-color: $site-white;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 18px;
+                h2 {
+                    width: 130px;
+                    font-family: LatoBlack;
+                    font-size: 15px;
+                    border-bottom: solid 3px $site-black;
+                    letter-spacing: 1px;
+                }
+                p {
+                    width: 138px;
+                    font-family: Lato;
+                    font-size: 9px;
+                    letter-spacing: 1px;
+                    text-align: center;
+                }
+                .recipe-list-info {
+                    width: 90px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    img {
+                        width: 24px;
+                    }
+                }
+            }
+        }
     }
 }
