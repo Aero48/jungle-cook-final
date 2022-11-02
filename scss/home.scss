@@ -1,0 +1,18 @@
+.home{
+    background-image: linear-gradient(rgba(242, 92, 84, .4), rgba(242, 92, 84, .4)),url(../images/hero.jpg);
+    width: 100%;
+    min-height: 800px;
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    .yellow-ellipse {
+        height: 25px;
+        width: 25px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+      }
+}
