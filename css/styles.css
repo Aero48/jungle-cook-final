@@ -105,7 +105,7 @@ nav .nav-links button {
   border-radius: 50%;
   display: inline-block;
   text-align: center;
-  padding: 100px;
+  padding-top: 120px;
 }
 .home .yellow-ellipse .yellow-elipse-text {
   margin: 0 auto;
@@ -134,10 +134,16 @@ nav .nav-links button {
   background-color: #FCBCB8;
   border-radius: 50%;
   display: inline-block;
+  padding-top: 50px;
 }
-.home .pink-ellipse p {
+.home .pink-ellipse .pink-ellipse-text {
+  margin: 0 auto;
+  width: 106px;
+  height: 40px;
+  background-color: aliceblue;
+}
+.home .pink-ellipse .pink-ellipse-text p {
   text-align: center;
-  width: 164px;
   font-size: 13px;
   font-family: Lato;
   color: black;
