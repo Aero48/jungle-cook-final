@@ -134,18 +134,18 @@ nav .nav-links button {
   background-color: #FCBCB8;
   border-radius: 50%;
   display: inline-block;
-  padding-top: 50px;
+  padding-top: 60px;
 }
 .home .pink-ellipse .pink-ellipse-text {
   margin: 0 auto;
   width: 106px;
   height: 40px;
-  background-color: aliceblue;
 }
 .home .pink-ellipse .pink-ellipse-text p {
   text-align: center;
-  font-size: 13px;
+  font-size: 10px;
   font-family: Lato;
+  font-style: italic;
   color: black;
 }
 
