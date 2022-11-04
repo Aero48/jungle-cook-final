@@ -94,9 +94,16 @@ nav .nav-links button {
   background-size: cover;
 }
 .home .yellow-ellipse {
-  height: 25px;
-  width: 25px;
-  background-color: #bbb;
+  height: 357px;
+  width: 357px;
+  background-color: #FFD972;
+  border-radius: 50%;
+  display: inline-block;
+}
+.home .pink-ellipse {
+  height: 167px;
+  width: 167px;
+  background-color: #FCBCB8;
   border-radius: 50%;
   display: inline-block;
 }
