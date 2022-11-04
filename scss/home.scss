@@ -6,21 +6,72 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 
 
     .yellow-ellipse {
-        height: 357px;
-        width: 357px;
+      margin: 0 auto;
+      position: absolute;
+      left: 400px;
+      top: 240px;
+        height: 358px;
+        width: 358px;
         background-color: #FFD972;
         border-radius: 50%;
         display: inline-block;
+        text-align: center;
+        padding: 100px;
+
+        .yellow-elipse-text{
+          margin: 0 auto;
+          width: 164px;
+          height: 140px;
+          // background-color: aliceblue;
+          h1{
+            text-align: center;
+            // width: 164px;
+            font-size: 24px;
+            font-family: CaveatBold;
+            color: black;
+    
+          }
+  
+          p{
+            margin-top: 20px;
+            text-align: center;
+            // width: 164px;
+            // height: 80px;
+            font-size: 13px;
+            font-family:Lato;
+            color: black;
+  
+  
+          }
+
+        }
+
+        
       }
 
       .pink-ellipse {
-        height: 167px;
-        width: 167px;
+        position: absolute;
+      left: 680px;
+      top: 200px;
+        height: 168px;
+        width: 168px;
         background-color:#FCBCB8;
         border-radius: 50%;
         display: inline-block;
+
+        p{
+         
+          text-align: center;
+          width: 164px;
+          font-size: 13px;
+          font-family:Lato;
+          color: black;
+
+
+        }
       }
 }
