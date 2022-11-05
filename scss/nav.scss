@@ -18,11 +18,12 @@ nav {
     }
 
     .nav-links {
-        width: 551px;
+        //width: 551px;
         height: 52px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 41px;
 
         a {
             font-family: Caveat;

@@ -1,0 +1,64 @@
+.login-content {
+    width: 100%;
+    background-color: $site-yellow;
+    min-height: 100vh;
+    padding-top: 80px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .login-form {
+        width: 206px;
+        min-height: 100px;
+
+        h1{
+            font-family: LatoBlack;
+            font-size: 30px;
+            color: $site-black;
+            letter-spacing: 3px;
+
+            margin-bottom: 55px;
+        }
+
+        #login-email, #login-pw{
+            @include inputField(100%, 19px, 12px);
+            margin-bottom: 51px;
+        }
+
+        #login-submit{
+            @include button;
+            width: 100%;
+        }
+    }
+
+    .signup-form {
+        width: 250px;
+        min-height: 100px;
+
+        p {
+            font-family: LatoItalic;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        h1{
+            font-family: Lato;
+            font-size: 30px;
+            color: $site-black;
+            letter-spacing: 3px;
+
+            margin-bottom: 55px;
+        }
+
+        #signup-fn, #signup-ln, #signup-email, #signup-pw{
+            @include inputField(100%, 19px, 12px);
+            margin-bottom: 51px;
+        }
+
+        #signup-submit{
+            @include button;
+            width: 100%;
+        }
+    }
+}

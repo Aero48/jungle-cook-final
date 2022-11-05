@@ -17,3 +17,16 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+@mixin inputField($width, $height, $font-size) {
+    width: $width;
+    height: $height;
+
+    font-family: Lato;
+    font-size: $font-size;
+    color: $site-black;
+    
+    border: none;
+    border-bottom: solid 3px $site-black;
+    background-color: transparent;
+}
