@@ -14,6 +14,6 @@ For this final, your team will be taking this prototype, https://xd.adobe.com/sp
 ### Logan
 
 - Styling: Nav, Footer, Login, Browse, Your Recipes
-- Function: Recipe Injection,
+- Function: MVC Model, Recipe Injection,
 
 ### Web 4 Link:
