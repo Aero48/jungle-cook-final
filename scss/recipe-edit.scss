@@ -5,6 +5,7 @@
     padding-left: 149px;
     padding-right: 149px;
     margin: 0 auto;
+    position: relative;
 
     h1{
         text-align: left;
@@ -55,17 +56,19 @@
             padding-right: 14px;
         }
 
+        #addRecipe{
+          @include recipe-button(422px, 52px, 25px);
+          text-align: center;
+          margin-bottom: 200px;
+          position: absolute;
+          left: 250px;
+          // center?
+      }
        
 
       }
 
-      #addRecipe{
-        @include recipe-button(422px, 52px, 25px);
-        text-align: center;
-        margin-bottom: 200px;
-
-        // center?
-    }
+     
 
 
 }

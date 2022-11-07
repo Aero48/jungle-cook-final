@@ -58,12 +58,12 @@
        
 
       }
-
       #addRecipe{
         @include recipe-button(422px, 52px, 25px);
         text-align: center;
         margin-bottom: 200px;
-
+        position: absolute;
+        left: 250px;
         // center?
     }
 

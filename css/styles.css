@@ -344,6 +344,8 @@ nav .nav-links button {
   cursor: pointer;
   text-align: center;
   margin-bottom: 200px;
+  position: absolute;
+  left: 250px;
 }
 
 .recipe-edit {
@@ -353,6 +355,7 @@ nav .nav-links button {
   padding-left: 149px;
   padding-right: 149px;
   margin: 0 auto;
+  position: relative;
 }
 .recipe-edit h1 {
   text-align: left;
@@ -418,7 +421,7 @@ nav .nav-links button {
   padding-left: 13px;
   padding-right: 14px;
 }
-.recipe-edit #addRecipe {
+.recipe-edit .recipe-input-container #addRecipe {
   width: 422px;
   height: 52px;
   border: none;
@@ -430,6 +433,8 @@ nav .nav-links button {
   cursor: pointer;
   text-align: center;
   margin-bottom: 200px;
+  position: absolute;
+  left: 250px;
 }
 
 .recipe-view {
