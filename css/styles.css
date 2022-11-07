@@ -263,6 +263,7 @@ nav .nav-links button {
 .recipe-create {
   width: 100%;
   min-height: 100vh;
+  padding-bottom: 214px;
   padding-top: 214px;
   padding-left: 149px;
   padding-right: 149px;
@@ -352,6 +353,7 @@ nav .nav-links button {
   width: 100%;
   min-height: 100vh;
   padding-top: 214px;
+  padding-bottom: 214px;
   padding-left: 149px;
   padding-right: 149px;
   margin: 0 auto;
@@ -441,7 +443,63 @@ nav .nav-links button {
   width: 100%;
   min-height: 100vh;
   padding-top: 214px;
+  padding-right: 178px;
+  padding-left: 178px;
+  padding-bottom: 214px;
   margin: 0 auto;
+}
+.recipe-view .description {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: aqua;
+  position: relative;
+}
+.recipe-view .description #recipe-view-title {
+  text-align: left;
+  font-size: 20px;
+  font-family: LatoBlack;
+  color: black;
+  margin-bottom: 50px;
+  position: absolute;
+  left: 10px;
+  top: 0;
+}
+.recipe-view .description .recipe-image {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 468px;
+  height: 421px;
+  background-size: cover;
+}
+.recipe-view .description .recipe-description {
+  width: 468px;
+  position: absolute;
+  left: 540px;
+  top: 0;
+}
+.recipe-view .description .recipe-description h2 {
+  text-align: left;
+  font-size: 25px;
+  font-family: LatoBlack;
+  color: black;
+  margin-bottom: 20px;
+}
+.recipe-view .description .recipe-description p {
+  text-align: left;
+  font-size: 20px;
+  font-family: Caveat;
+  margin-bottom: 20px;
+  color: black;
+}
+.recipe-view .description .recipe-description h3 {
+  text-align: left;
+  font-size: 20px;
+  font-family: LatoBlack;
+  color: black;
+  margin-bottom: 20px;
 }
 
 .login-content {
