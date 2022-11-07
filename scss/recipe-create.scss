@@ -4,12 +4,22 @@
     padding-top: 214px;
     padding-left: 149px;
     padding-right: 149px;
+    margin: 0 auto;
 
     h1{
         text-align: left;
         font-size: 25px;
         font-family: CaveatBold;
         color: black;
+
+      }
+
+      h2{
+        text-align: left;
+        font-size: 20px;
+        font-family: LatoBlack;
+        color: black;
+        margin-bottom:50px;
 
       }
 
@@ -33,6 +43,27 @@
             right: 0;
         }
 
+        #plus{
+            @include recipe-button(38px, 38px, 20px);
+            color: white;
+            position: absolute;
+            top: -15px;
+            right: 0;
+            padding-top: 5px;
+            padding-bottom: 8.45px;
+            padding-left: 13px;
+            padding-right: 14px;
+        }
+
+       
+
       }
+
+      #addRecipe{
+        @include recipe-button(422px, 52px, 25px);
+        text-align: center;
+        margin-bottom: 200px;
+    }
+
 
 }
