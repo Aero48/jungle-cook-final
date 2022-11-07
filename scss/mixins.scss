@@ -30,3 +30,30 @@
     border-bottom: solid 3px $site-black;
     background-color: transparent;
 }
+
+@mixin recipe-inputField($width, $height, $font-size) {
+    width: $width;
+    height: $height;
+
+    font-family: LatoLight;
+    font-size: $font-size;
+    color: $site-black;
+    
+    border: none;
+    border-bottom: solid 3px $site-black;
+    background-color: transparent;
+}
+
+@mixin recipe-button($width, $height, $font-size) {
+    width: $width;
+    height: $height;
+
+    border: none;
+    background-color: $site-pink;
+
+    font-family: Caveat;
+    font-size: $font-size;
+    border-radius: 45px;
+    filter: drop-shadow(0 10px 6px rgba(0,0,0,.16));
+    cursor: pointer;
+}

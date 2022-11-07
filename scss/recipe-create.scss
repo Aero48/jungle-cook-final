@@ -7,10 +7,31 @@
 
     h1{
         text-align: left;
-        // width: 164px;
-        font-size: 24px;
+        font-size: 25px;
         font-family: CaveatBold;
         color: black;
+
+      }
+
+      .recipe-input-container{
+        margin: 0 auto;
+        // background-color: aqua;
+        height: 30px ;
+        width: 980px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        position: relative;
+
+        #recipe-input{
+            @include recipe-inputField(100%, 100%, 20px);
+        }
+
+        #addFile{
+            @include recipe-button(110px, 36px, 17px);
+            position: absolute;
+            top: -15px;
+            right: 0;
+        }
 
       }
 
