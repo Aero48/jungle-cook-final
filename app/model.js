@@ -1,3 +1,5 @@
+var userInfo = {};
+
 export function changePage(pageID, callback) {
   if (pageID == "" || pageID == "home") {
     $.get(`pages/home.html`, function (contents) {
