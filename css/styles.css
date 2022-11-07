@@ -303,6 +303,7 @@ nav .nav-links button {
 .recipe-create .recipe-input-container #addFile {
   width: 110px;
   height: 36px;
+  margin: 0 auto;
   border: none;
   background-color: #FCBCB8;
   font-family: Caveat;
@@ -317,6 +318,7 @@ nav .nav-links button {
 .recipe-create .recipe-input-container #plus {
   width: 38px;
   height: 38px;
+  margin: 0 auto;
   border: none;
   background-color: #FCBCB8;
   font-family: Caveat;
@@ -336,6 +338,7 @@ nav .nav-links button {
 .recipe-create #addRecipe {
   width: 422px;
   height: 52px;
+  margin: 0 auto;
   border: none;
   background-color: #FCBCB8;
   font-family: Caveat;
@@ -393,6 +396,7 @@ nav .nav-links button {
 .recipe-edit .recipe-input-container #addFile {
   width: 110px;
   height: 36px;
+  margin: 0 auto;
   border: none;
   background-color: #FCBCB8;
   font-family: Caveat;
@@ -407,6 +411,7 @@ nav .nav-links button {
 .recipe-edit .recipe-input-container #plus {
   width: 38px;
   height: 38px;
+  margin: 0 auto;
   border: none;
   background-color: #FCBCB8;
   font-family: Caveat;
@@ -426,6 +431,7 @@ nav .nav-links button {
 .recipe-edit .recipe-input-container #addRecipe {
   width: 422px;
   height: 52px;
+  margin: 0 auto;
   border: none;
   background-color: #FCBCB8;
   font-family: Caveat;
@@ -444,7 +450,7 @@ nav .nav-links button {
   min-height: 100vh;
   padding-top: 214px;
   padding-right: 178px;
-  padding-left: 178px;
+  padding-left: 92px;
   padding-bottom: 214px;
   margin: 0 auto;
 }
@@ -453,31 +459,35 @@ nav .nav-links button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: aqua;
+  min-height: 500px;
+  width: 980px;
   position: relative;
 }
 .recipe-view .description #recipe-view-title {
-  text-align: left;
+  rotation-point: 50% 50%;
+  rotation: 180deg;
   font-size: 20px;
   font-family: LatoBlack;
   color: black;
   margin-bottom: 50px;
   position: absolute;
-  left: 10px;
-  top: 0;
+  left: 0;
+  top: 100;
+  rotate: 270deg;
 }
 .recipe-view .description .recipe-image {
+  background-color: aqua;
   position: absolute;
-  left: 20px;
+  left: 100px;
   top: 0;
   width: 468px;
   height: 421px;
   background-size: cover;
 }
 .recipe-view .description .recipe-description {
-  width: 468px;
+  width: 420px;
   position: absolute;
-  left: 540px;
+  left: 630px;
   top: 0;
 }
 .recipe-view .description .recipe-description h2 {
@@ -485,13 +495,13 @@ nav .nav-links button {
   font-size: 25px;
   font-family: LatoBlack;
   color: black;
-  margin-bottom: 20px;
+  margin-bottom: 36px;
 }
 .recipe-view .description .recipe-description p {
   text-align: left;
   font-size: 20px;
   font-family: Caveat;
-  margin-bottom: 20px;
+  margin-bottom: 36px;
   color: black;
 }
 .recipe-view .description .recipe-description h3 {
@@ -499,7 +509,59 @@ nav .nav-links button {
   font-size: 20px;
   font-family: LatoBlack;
   color: black;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 36px;
+}
+.recipe-view .ingredients {
+  margin-top: 100px;
+}
+.recipe-view .ingredients h2 {
+  text-align: left;
+  font-size: 25px;
+  font-family: LatoBlack;
+  color: black;
+  margin-bottom: 36px;
+}
+.recipe-view .ingredients p {
+  text-align: left;
+  font-size: 20px;
+  font-family: Caveat;
+  margin-bottom: 36px;
+  color: black;
+  line-height: 0px;
+}
+.recipe-view .instructions {
+  margin-top: 100px;
+}
+.recipe-view .instructions h2 {
+  text-align: left;
+  font-size: 25px;
+  font-family: LatoBlack;
+  color: black;
+  margin-bottom: 36px;
+}
+.recipe-view .instructions p {
+  text-align: left;
+  font-size: 20px;
+  font-family: Caveat;
+  margin-bottom: 36px;
+  color: black;
+  line-height: 0px;
+}
+.recipe-view .recipe-input-container #editRecipe {
+  width: 130px;
+  height: 42px;
+  margin: 0 auto;
+  border: none;
+  background-color: #FCBCB8;
+  font-family: Caveat;
+  font-size: 20px;
+  border-radius: 45px;
+  filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
+  cursor: pointer;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #FFD972;
 }
 
 .login-content {

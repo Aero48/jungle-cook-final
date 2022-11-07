@@ -3,7 +3,7 @@
     min-height: 100vh;
     padding-top: 214px;
     padding-right: 178px;
-    padding-left: 178px;
+    padding-left: 92px;
     padding-bottom: 214px;
     margin: 0 auto;
 
@@ -12,24 +12,31 @@
          display: flex;
          align-items: center; 
          justify-content: space-evenly;
-    background-color: aqua;
+         min-height: 500px;
+         width: 980px;
+    // background-color: aqua;
     position: relative;
 
 
         #recipe-view-title{
-            text-align: left;
+            // text-align: left;
+            rotation-point:50% 50%;
+            rotation:180deg;
         font-size: 20px;
         font-family: LatoBlack;
         color: black;
         margin-bottom:50px;
         position: absolute;
-        left: 10px;
-        top: 0;
+        left: 0;
+        top: 100;
+        rotate: 270deg;
+        
 
         }
         .recipe-image{
+            background-color: aqua;
             position: absolute;
-            left: 20px;
+            left: 100px;
             top: 0;
             width: 468px;
             height: 421px;
@@ -38,16 +45,16 @@
         }
 
         .recipe-description{
-            width: 468px;
+            width: 420px;
             position: absolute;
-            left: 540px;
+            left: 630px;
             top: 0;
             h2{
                 text-align: left;
                 font-size: 25px;
                 font-family: LatoBlack;
                 color: black;
-                margin-bottom:20px;
+                margin-bottom:36px;
         
               }
 
@@ -55,7 +62,7 @@
                 text-align: left;
                 font-size: 20px;
                 font-family: Caveat;
-                margin-bottom:20px;
+                margin-bottom:36px;
                 color: black;
               }
               h3{
@@ -63,9 +70,68 @@
                 font-size: 20px;
                 font-family: LatoBlack;
                 color: black;
-                margin-bottom:20px;
+                margin-top: 40px;
+                margin-bottom:36px;
         
               }
         }
     }
+
+    .ingredients{
+        margin-top: 100px;
+        h2{
+            text-align: left;
+            font-size: 25px;
+            font-family: LatoBlack;
+            color: black;
+            margin-bottom:36px;
+            
+    
+          }
+
+          p{
+            text-align: left;
+            font-size: 20px;
+            font-family: Caveat;
+            margin-bottom:36px;
+            color: black;
+            line-height: 0px;
+          }
+
+
+    }
+    .instructions{
+        margin-top: 100px;
+        h2{
+            text-align: left;
+            font-size: 25px;
+            font-family: LatoBlack;
+            color: black;
+            margin-bottom:36px;
+    
+          }
+
+          p{
+            text-align: left;
+            font-size: 20px;
+            font-family: Caveat;
+            margin-bottom:36px;
+            color: black;
+            line-height: 0px;
+          }
+
+
+    }
+
+    .recipe-input-container{
+        #editRecipe{
+            @include recipe-button(130px, 42px, 20px);
+            text-align: center;
+            margin-top: 50px;
+            background-color: $site-yellow;
+            // center?
+        }
+    }
+
+    
 }

@@ -47,6 +47,8 @@
 @mixin recipe-button($width, $height, $font-size) {
     width: $width;
     height: $height;
+    margin: 0 auto;
+    
 
     border: none;
     background-color: $site-pink;
