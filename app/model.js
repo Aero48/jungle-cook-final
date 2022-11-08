@@ -2,6 +2,7 @@ var userInfo = {};
 
 var recipes = [
   {
+    id: 0,
     name: "Supreme Pizza",
     img: "../images/recipe-pizza.jpg",
     description: "Make pizza night super duper out of this world with homemade pizza. This recipe is supreme with vegetables and two types of meat. Yum!",
@@ -37,6 +38,7 @@ var recipes = [
     userId: 0
   },
   {
+    id: 1,
     name: "Fettuccine Alfredo",
     img: "https://www.themealdb.com/images/media/meals/0jv5gx1661040802.jpg",
     description: "A Delicious Italian dish.",
@@ -77,7 +79,7 @@ export function changePage(pageID, callback) {
       $("#app").html(data);
       $(".recipe-list").html(``);
       $.each(recipes, function (idx, recipe) {
-        $(".recipe-list").append(`<div class="recipe-list-item">
+        $(".recipe-list").append(`<div class="recipe-list-item" id="recipe-${recipe.id}">
         <div class="recipe-list-item-content">
           <div
             class="recipe-list-img"
