@@ -3,7 +3,7 @@ import * as MODEL from "./model.js";
 function changeRoute() {
   let pageID = window.location.hash.replace("#", "");
   if (pageID == "" || pageID == "home" || pageID == "login") {
-    MODEL.changePage(pageID, initSubmitListener);
+    MODEL.changePage(pageID, initSignUpListener);
   } else {
     MODEL.changePage(pageID);
   }
@@ -16,7 +16,7 @@ function initURLListener() {
 
 // sign-up function
 
-function initSubmitListener() {
+function initSignUpListener() {
   $("#signup-submit").on("click", function (e) {
     console.log("submit");
 
