@@ -5,7 +5,8 @@ var recipes = [
     id: 0,
     name: "Supreme Pizza",
     img: "../images/recipe-pizza.jpg",
-    description: "Make pizza night super duper out of this world with homemade pizza. This recipe is supreme with vegetables and two types of meat. Yum!",
+    description:
+      "Make pizza night super duper out of this world with homemade pizza. This recipe is supreme with vegetables and two types of meat. Yum!",
     totalTime: "1h24min",
     servings: "4",
     ingredients: [
@@ -19,7 +20,7 @@ var recipes = [
       "70g Mozzarella",
       "Peeled and Sliced Oregano",
       "Basil Leaves",
-      "Pinch of Black Pepper"
+      "Pinch of Black Pepper",
     ],
     instructions: [
       "Preheat the oven to 230°C.",
@@ -33,9 +34,9 @@ var recipes = [
       "Spread the passata on top making sure you go to the edge.",
       "Evenly place the mozzarella (or other cheese) on top, season with the oregano and black pepper, then drizzle with a little olive oil.",
       "Cook in the oven for 10 – 12 minutes until the cheese slightly colours.",
-      "When ready, place the basil leaf on top and tuck in!"
+      "When ready, place the basil leaf on top and tuck in!",
     ],
-    userId: 0
+    userId: 0,
   },
   {
     id: 1,
@@ -50,18 +51,20 @@ var recipes = [
       "1/2 cup Butter",
       "1/2 cup Parmesan",
       "2 tbsp Parsley",
-      "Black Pepper"
+      "Black Pepper",
     ],
     instructions: [
       "Cook pasta according to package instructions in a large pot of boiling water and salt.",
       "Add heavy cream and butter to a large skillet over medium heat until the cream bubbles and the butter melts.",
       "Whisk in parmesan and add seasoning (salt and black pepper).",
       "Let the sauce thicken slightly and then add the pasta and toss until coated in sauce.",
-      "Garnish with parsley, and it's ready."
+      "Garnish with parsley, and it's ready.",
     ],
-    userId: 0
-  }
+    userId: 0,
+  },
 ];
+
+var loggedIn = false;
 
 export function changePage(pageID, callback) {
   if (pageID == "" || pageID == "home") {
@@ -79,7 +82,9 @@ export function changePage(pageID, callback) {
       $("#app").html(data);
       $(".recipe-list").html(``);
       $.each(recipes, function (idx, recipe) {
-        $(".recipe-list").append(`<div class="recipe-list-item" id="recipe-${recipe.id}">
+        $(
+          ".recipe-list"
+        ).append(`<div class="recipe-list-item" id="recipe-${recipe.id}">
         <div class="recipe-list-item-content">
           <div
             class="recipe-list-img"
@@ -101,8 +106,8 @@ export function changePage(pageID, callback) {
           </div>
         </div>
       </div>`);
-      })
-    })
+      });
+    });
   } else {
     $.get(`pages/${pageID}.html`, function (contents) {
       $("#app").html(contents);
