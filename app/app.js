@@ -7,9 +7,6 @@ function changeRoute() {
   } else {
     MODEL.changePage(pageID);
   }
-
-  if (MODEL.loggedIn == true) {
-  }
 }
 
 function initURLListener() {
@@ -46,7 +43,7 @@ function initSubmitListener() {
       };
 
       MODEL.setUserInfo(userObj);
-      MODEL.loggedIn = true;
+      MODEL.toggleLogin();
     }
   });
 }

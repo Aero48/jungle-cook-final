@@ -73,10 +73,16 @@ export function changePage(pageID, callback) {
       console.log(pageID);
     });
   } else if (pageID == "login") {
-    $.get(`pages/login.html`, function (data) {
-      $("#app").html(data);
-      callback();
-    });
+    if (loggedIn == false) {
+      $.get(`pages/login.html`, function (data) {
+        $("#app").html(data);
+        callback();
+      });
+    } else {
+      toggleLogin();
+      window.location.hash = "home";
+    }
+
   } else if (pageID == "recipes") {
     $.get(`pages/recipes.html`, function (data) {
       $("#app").html(data);
@@ -119,4 +125,15 @@ export function changePage(pageID, callback) {
 export function setUserInfo(userObject) {
   userInfo = userObject;
   console.log(userInfo);
+}
+
+export function toggleLogin() {
+  if (!loggedIn) {
+    loggedIn = true;
+    $("#login-btn button").html("Logout");
+  } else {
+    loggedIn = false;
+    $("#login-btn button").html("Login");
+  }
+  console.log(loggedIn);
 }
