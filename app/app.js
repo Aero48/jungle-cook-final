@@ -1,9 +1,15 @@
 import * as MODEL from "./model.js";
 
 function changeRoute() {
-  let pageID = window.location.hash.replace("#", "");
+  let pageURL = window.location.hash.replace("#", "");
+  //Splits the page url up by slashes and puts the pieces into an array
+  let pageLayers = pageURL.split("/");
+  let pageID = pageLayers[0];
+  let subpageID = pageLayers[1];
   if (pageID == "" || pageID == "home" || pageID == "login") {
-    MODEL.changePage(pageID, initSignUpListener);
+    MODEL.changePage(pageID, subpageID, initSignUpListener);
+  } else if (pageID == "recipe-view") {
+    MODEL.changePage(pageID, subpageID);
   } else {
     MODEL.changePage(pageID);
   }

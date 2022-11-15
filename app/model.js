@@ -66,7 +66,7 @@ var recipes = [
 
 var loggedIn = false;
 
-export function changePage(pageID, callback) {
+export function changePage(pageID, subpageID, callback) {
   if (pageID == "" || pageID == "home") {
     $.get(`pages/home.html`, function (contents) {
       $("#app").html(contents);
@@ -92,10 +92,10 @@ export function changePage(pageID, callback) {
           ".recipe-list"
         ).append(`<div class="recipe-list-item" id="recipe-${recipe.id}">
         <div class="recipe-list-item-content">
-          <div
+          <a href="#recipe-view/${recipe.id}"><div
             class="recipe-list-img"
             style="background-image: url(${recipe.img})"
-          ></div>
+          ></div></a>
           <div class="recipe-list-text">
             <h2>${recipe.name}</h2>
             <p>
@@ -114,6 +114,44 @@ export function changePage(pageID, callback) {
       </div>`);
       });
     });
+  } else if (pageID == "recipe-view") {
+    console.log("test");
+    $.get(`pages/recipe-view.html`, function (data) {
+      $("#app").html(data);
+      $.each(recipes, function (idx, recipe) {
+        if (recipe.id == subpageID) {
+          $(".recipe-view").html(`<div class="description">
+        <label for="recipe-view-title" id="recipe-view-title">${recipe.name}</label>
+        <div>
+          <img class="recipe-image" src="${recipe.img}" alt="" />
+        </div>
+        <div class="recipe-description">
+          <h2>Description:</h2>
+          <p>
+            ${recipe.description}
+          </p>
+          <h3>Total Time:</h3>
+          <p>${recipe.totalTime}</p>
+    
+          <h3>Servings:</h3>
+          <p>${recipe.servings} servings</p>
+        </div>
+      </div>
+    
+      <div class="ingredients">
+        <h2>Ingredients:</h2>
+      </div>
+    
+      <div class="instructions">
+        <h2>Instructions:</h2>
+        
+      </div>
+      <div class="recipe-input-container">
+        <input type="submit" value="Edit Recipe" id="editRecipe" />
+      </div>`)
+        }
+      })
+    })
   } else {
     $.get(`pages/${pageID}.html`, function (contents) {
       $("#app").html(contents);
