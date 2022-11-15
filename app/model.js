@@ -149,7 +149,17 @@ export function changePage(pageID, subpageID, callback) {
       <div class="recipe-input-container">
         <input type="submit" value="Edit Recipe" id="editRecipe" />
       </div>`)
+          $(".ingredients").html(``);
+          $.each(recipe.ingredients, function (idx, ingredient) {
+            $(".ingredients").append(`<p>${ingredient}</p>`)
+          })
+
+          $(".instructions").html(``);
+          $.each(recipe.instructions, function (idx, instruction) {
+            $(".instructions").append(`<p>${idx + 1}. ${instruction}</p>`)
+          })
         }
+
       })
     })
   } else {
