@@ -56,7 +56,8 @@
                     justify-content: center;
                     align-items: center;
                     gap: 18px;
-                    h2 {
+                    a h2 {
+                        color: $site-black;
                         width: 130px;
                         font-family: LatoBlack;
                         font-size: 15px;

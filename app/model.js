@@ -97,7 +97,7 @@ export function changePage(pageID, subpageID, callback) {
             style="background-image: url(${recipe.img})"
           ></div></a>
           <div class="recipe-list-text">
-            <h2>${recipe.name}</h2>
+          <a href="#recipe-view/${recipe.id}"><h2>${recipe.name}</h2></a>
             <p>
               ${recipe.description}
             </p>

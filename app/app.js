@@ -50,6 +50,7 @@ function initSignUpListener() {
 
       MODEL.setUserInfo(userObj);
       MODEL.toggleLogin();
+      window.location.hash = "home";
     }
   });
 }

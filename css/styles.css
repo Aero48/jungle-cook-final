@@ -224,7 +224,8 @@ nav .nav-links button {
   align-items: center;
   gap: 18px;
 }
-.recipes-content .recipe-list .recipe-list-item .recipe-list-item-content .recipe-list-text h2 {
+.recipes-content .recipe-list .recipe-list-item .recipe-list-item-content .recipe-list-text a h2 {
+  color: #000;
   width: 130px;
   font-family: LatoBlack;
   font-size: 15px;
