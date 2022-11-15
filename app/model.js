@@ -131,9 +131,10 @@ export function toggleLogin() {
   if (!loggedIn) {
     loggedIn = true;
     $("#login-btn button").html("Logout");
+    $("#login-footer").html("Logout");
   } else {
     loggedIn = false;
     $("#login-btn button").html("Login");
+    $("#login-footer").html("Login");
   }
-  console.log(loggedIn);
 }
