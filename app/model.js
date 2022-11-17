@@ -1,4 +1,6 @@
-var userInfo = {};
+var signupInfo = {};
+
+var loginInfo = {};
 
 var recipes = [
   {
@@ -168,9 +170,14 @@ export function changePage(pageID, subpageID, callback) {
   }
 }
 
-export function setUserInfo(userObject) {
-  userInfo = userObject;
-  console.log(userInfo);
+export function setSignUpInfo(newUserObject) {
+  signupInfo = newUserObject;
+  console.log(signupInfo);
+}
+
+export function setLoginInfo(userObject) {
+  loginInfo = userObject;
+  console.log(loginInfo);
 }
 
 export function toggleLogin() {

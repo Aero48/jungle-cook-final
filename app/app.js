@@ -7,7 +7,7 @@ function changeRoute() {
   let pageID = pageLayers[0];
   let subpageID = pageLayers[1];
   if (pageID == "" || pageID == "home" || pageID == "login") {
-    MODEL.changePage(pageID, subpageID, initSignUpListener);
+    MODEL.changePage(pageID, subpageID, initSignUpListener, initLoginListener);
   } else if (pageID == "recipe-view") {
     MODEL.changePage(pageID, subpageID);
   } else {
@@ -41,14 +41,39 @@ function initSignUpListener() {
       alert("Enter password.");
     } else {
       console.log("hello");
-      let userObj = {
+      let newUserObj = {
         firstName: fn,
         lastName: ln,
         email: em,
         password: pw,
       };
 
-      MODEL.setUserInfo(userObj);
+      MODEL.setSignUpInfo(newUserObj);
+      MODEL.toggleLogin();
+      window.location.hash = "home";
+    }
+  });
+}
+// login function
+function initLoginListener() {
+  $("#login-submit").on("click", function (e) {
+    console.log("submit");
+
+    let lem = $("#login-email").val();
+    let lpw = $("#login-pw").val();
+
+    if (lem == "") {
+      alert("Enter email.");
+    } else if (lpw == "") {
+      alert("Enter password.");
+    } else {
+      console.log("welcome");
+      let userObj = {
+        email: lem,
+        password: lpw,
+      };
+
+      MODEL.setLoginInfo(userObj);
       MODEL.toggleLogin();
       window.location.hash = "home";
     }
