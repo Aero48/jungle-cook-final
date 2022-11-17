@@ -9,7 +9,7 @@ For this final, your team will be taking this prototype, https://xd.adobe.com/sp
 ### Emma
 
 - Styling: Home, Recipe Edit, Recipe Change, Recipe View
-- Function: Login Page,
+- Function: Login Page, Your Recipes Toggle,
 
 ### Logan
 

@@ -80,9 +80,6 @@ nav .nav-links a {
   font-size: 25px;
   color: #000;
 }
-nav .nav-links a .not-visible {
-  display: none;
-}
 nav .nav-links button {
   width: 158px;
   height: 52px;

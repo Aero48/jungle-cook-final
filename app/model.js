@@ -82,7 +82,6 @@ export function changePage(pageID, subpageID, callback) {
       toggleLogin();
       window.location.hash = "home";
     }
-
   } else if (pageID == "recipes") {
     $.get(`pages/recipes.html`, function (data) {
       $("#app").html(data);
@@ -148,20 +147,19 @@ export function changePage(pageID, subpageID, callback) {
       </div>
       <div class="recipe-input-container">
         <input type="submit" value="Edit Recipe" id="editRecipe" />
-      </div>`)
+      </div>`);
           $(".ingredients").html(``);
           $.each(recipe.ingredients, function (idx, ingredient) {
-            $(".ingredients").append(`<p>${ingredient}</p>`)
-          })
+            $(".ingredients").append(`<p>${ingredient}</p>`);
+          });
 
           $(".instructions").html(``);
           $.each(recipe.instructions, function (idx, instruction) {
-            $(".instructions").append(`<p>${idx + 1}. ${instruction}</p>`)
-          })
+            $(".instructions").append(`<p>${idx + 1}. ${instruction}</p>`);
+          });
         }
-
-      })
-    })
+      });
+    });
   } else {
     $.get(`pages/${pageID}.html`, function (contents) {
       $("#app").html(contents);
@@ -180,9 +178,13 @@ export function toggleLogin() {
     loggedIn = true;
     $("#login-btn button").html("Logout");
     $("#login-footer").html("Logout");
+    $("#yourRecipes").html("Your Recipes");
+    $("#yourRecipes-footer").html("Your Recipes");
   } else {
     loggedIn = false;
     $("#login-btn button").html("Login");
     $("#login-footer").html("Login");
+    $("#yourRecipes").html("");
+    $("#yourRecipes-footer").html("");
   }
 }
