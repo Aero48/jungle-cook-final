@@ -32,6 +32,7 @@
         margin-top: 100px;
         margin-bottom: 100px;
         position: relative;
+       
 
         #recipe-input{
             @include recipe-inputField(100%, 100%, 20px);
@@ -44,21 +45,23 @@
             right: 0;
         }
 
-        #plus{
-            @include recipe-button(38px, 38px, 20px);
-            color: white;
-            position: absolute;
-            top: -15px;
-            right: 0;
-            padding-top: 5px;
-            padding-bottom: 8.45px;
-            padding-left: 13px;
-            padding-right: 14px;
-        }
-
        
 
       }
+
+      #plus{
+        @include recipe-button(38px, 38px, 20px);
+        color: white;
+        position: absolute;
+        top: -15px;
+        right: 0;
+        padding-top: 5px;
+        padding-bottom: 8.45px;
+        padding-left: 13px;
+        padding-right: 14px;
+    }
+
+
       #addRecipe{
         @include recipe-button(422px, 52px, 25px);
         text-align: center;

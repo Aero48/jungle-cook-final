@@ -300,6 +300,7 @@ nav .nav-links button {
   border: none;
   border-bottom: solid 3px #000;
   background-color: transparent;
+  outline: none;
 }
 .recipe-create .recipe-input-container #addFile {
   width: 110px;
@@ -312,11 +313,12 @@ nav .nav-links button {
   border-radius: 45px;
   filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
   cursor: pointer;
+  outline: none;
   position: absolute;
   top: -15px;
   right: 0;
 }
-.recipe-create .recipe-input-container #plus {
+.recipe-create #plus {
   width: 38px;
   height: 38px;
   margin: 0 auto;
@@ -327,6 +329,7 @@ nav .nav-links button {
   border-radius: 45px;
   filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
   cursor: pointer;
+  outline: none;
   color: white;
   position: absolute;
   top: -15px;
@@ -347,6 +350,7 @@ nav .nav-links button {
   border-radius: 45px;
   filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
   cursor: pointer;
+  outline: none;
   text-align: center;
   margin-bottom: 200px;
   position: absolute;
@@ -393,6 +397,7 @@ nav .nav-links button {
   border: none;
   border-bottom: solid 3px #000;
   background-color: transparent;
+  outline: none;
 }
 .recipe-edit .recipe-input-container #addFile {
   width: 110px;
@@ -405,6 +410,7 @@ nav .nav-links button {
   border-radius: 45px;
   filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
   cursor: pointer;
+  outline: none;
   position: absolute;
   top: -15px;
   right: 0;
@@ -420,6 +426,7 @@ nav .nav-links button {
   border-radius: 45px;
   filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
   cursor: pointer;
+  outline: none;
   color: white;
   position: absolute;
   top: -15px;
@@ -440,6 +447,7 @@ nav .nav-links button {
   border-radius: 45px;
   filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
   cursor: pointer;
+  outline: none;
   text-align: center;
   margin-bottom: 200px;
   position: absolute;
@@ -560,6 +568,7 @@ nav .nav-links button {
   border-radius: 45px;
   filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
   cursor: pointer;
+  outline: none;
   text-align: center;
   margin-top: 50px;
   background-color: #FFD972;
@@ -595,6 +604,7 @@ nav .nav-links button {
   border: none;
   border-bottom: solid 3px #000;
   background-color: transparent;
+  outline: none;
   margin-bottom: 51px;
 }
 .login-content .login-form #login-submit {
@@ -635,6 +645,7 @@ nav .nav-links button {
   border: none;
   border-bottom: solid 3px #000;
   background-color: transparent;
+  outline: none;
   margin-bottom: 51px;
 }
 .login-content .signup-form #signup-submit {

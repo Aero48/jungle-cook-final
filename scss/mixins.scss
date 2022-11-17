@@ -29,6 +29,7 @@
     border: none;
     border-bottom: solid 3px $site-black;
     background-color: transparent;
+    outline: none;
 }
 
 @mixin recipe-inputField($width, $height, $font-size) {
@@ -42,6 +43,7 @@
     border: none;
     border-bottom: solid 3px $site-black;
     background-color: transparent;
+    outline: none;
 }
 
 @mixin recipe-button($width, $height, $font-size) {
@@ -58,4 +60,5 @@
     border-radius: 45px;
     filter: drop-shadow(0 10px 6px rgba(0,0,0,.16));
     cursor: pointer;
+    outline: none;
 }
