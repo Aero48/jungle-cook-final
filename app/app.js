@@ -7,7 +7,7 @@ function changeRoute() {
   let pageID = pageLayers[0];
   let subpageID = pageLayers[1];
   if (pageID == "" || pageID == "home" || pageID == "login") {
-    MODEL.changePage(pageID, subpageID, initSignUpListener, initLoginListener);
+    MODEL.changePage(pageID, subpageID, loginController);
   } else if (pageID == "recipe-view") {
     MODEL.changePage(pageID, subpageID);
   } else {
@@ -25,8 +25,7 @@ var recipes = [];
 function initListener() {
   $(".addBtn").on("click", (e) => {
     $(".recipe-create-formHolder .recipe-input-container .ingred").append(
-      `<input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${
-        ingredCnt + 1
+      `<input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${ingredCnt + 1
       }" />`
     );
     ingredCnt++;
@@ -34,8 +33,7 @@ function initListener() {
 
   $(".addSBtn").on("click", (e) => {
     $(".formHolder .steps").append(
-      `<input type="text" id="step${stepCnt}" placeholder="Step #${
-        stepCnt + 1
+      `<input type="text" id="step${stepCnt}" placeholder="Step #${stepCnt + 1
       }" />`
     );
     stepCnt++;
@@ -69,6 +67,11 @@ function initURLListener() {
 }
 
 // sign-up function
+
+function loginController() {
+  initLoginListener();
+  initSignUpListener();
+}
 
 function initSignUpListener() {
   $("#signup-submit").on("click", function (e) {
