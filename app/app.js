@@ -10,12 +10,18 @@ function changeRoute() {
     MODEL.changePage(pageID, subpageID, loginController);
   } else if (pageID == "recipe-view") {
     MODEL.changePage(pageID, subpageID);
+  } else if (pageID == "recipe-create") {
+    MODEL.changePage(pageID, subpageID, createRecipeController);
   } else {
     MODEL.changePage(pageID);
   }
 }
 
 // create recipe function
+
+function createRecipeController() {
+  initListener();
+}
 
 var ingredCnt = 3;
 var stepCnt = 3;
@@ -24,22 +30,24 @@ var recipes = [];
 
 function initListener() {
   $(".addBtn").on("click", (e) => {
-    $(".recipe-create-formHolder .recipe-input-container .ingred").append(
-      `<input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${ingredCnt + 1
+    $(".recipe-create-formHolder .ingred .recipe-input-container ").append(
+      `<input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${
+        ingredCnt + 1
       }" />`
     );
     ingredCnt++;
   });
 
   $(".addSBtn").on("click", (e) => {
-    $(".formHolder .steps").append(
-      `<input type="text" id="step${stepCnt}" placeholder="Step #${stepCnt + 1
+    $(".recipe-create-formHolder .steps .recipe-input-container").append(
+      `<input type="text" id="step${stepCnt}" placeholder="Instruction #${
+        stepCnt + 1
       }" />`
     );
     stepCnt++;
   });
 
-  $("#submitBtn").on("click", (e) => {
+  $("#createRecipeBtn").on("click", (e) => {
     let recipeObj = {
       description: "",
       steps: [],
@@ -132,5 +140,4 @@ function initLoginListener() {
 
 $(document).ready(function () {
   initURLListener();
-  initListener();
 });

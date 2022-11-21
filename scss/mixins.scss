@@ -47,7 +47,7 @@
 }
 
 @mixin recipe-button($width, $height, $font-size) {
-    width: $width;
+    max-width: $width;
     height: $height;
     margin: 0 auto;
     
