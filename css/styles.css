@@ -369,35 +369,39 @@ nav .nav-links button {
 .recipe-edit {
   width: 100%;
   min-height: 100vh;
-  padding-top: 214px;
   padding-bottom: 214px;
+  padding-top: 214px;
   padding-left: 149px;
   padding-right: 149px;
   margin: 0 auto;
-  position: relative;
 }
-.recipe-edit h1 {
+.recipe-edit .recipe-create-formHolder {
+  position: relative;
+  min-height: 100%;
+  max-width: 980px;
+}
+.recipe-edit .recipe-create-formHolder h1 {
   text-align: left;
   font-size: 25px;
   font-family: CaveatBold;
   color: black;
 }
-.recipe-edit h2 {
+.recipe-edit .recipe-create-formHolder h2 {
   text-align: left;
   font-size: 20px;
   font-family: LatoBlack;
   color: black;
   margin-bottom: 50px;
 }
-.recipe-edit .recipe-input-container {
+.recipe-edit .recipe-create-formHolder .recipe-input-container {
   margin: 0 auto;
   height: 30px;
-  width: 980px;
+  max-width: 980px;
   margin-top: 100px;
   margin-bottom: 100px;
   position: relative;
 }
-.recipe-edit .recipe-input-container #recipe-input {
+.recipe-edit .recipe-create-formHolder .recipe-input-container input, .recipe-edit .recipe-create-formHolder .recipe-input-container #step0, .recipe-edit .recipe-create-formHolder .recipe-input-container #step1, .recipe-edit .recipe-create-formHolder .recipe-input-container #step2, .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred0, .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred1, .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred2 {
   width: 100%;
   height: 100%;
   font-family: LatoLight;
@@ -408,7 +412,7 @@ nav .nav-links button {
   background-color: transparent;
   outline: none;
 }
-.recipe-edit .recipe-input-container #addFile {
+.recipe-edit .recipe-create-formHolder .recipe-input-container #addFile {
   max-width: 110px;
   height: 36px;
   margin: 0 auto;
@@ -424,28 +428,31 @@ nav .nav-links button {
   top: -15px;
   right: 0;
 }
-.recipe-edit .recipe-input-container #plus {
+.recipe-edit .recipe-create-formHolder .addBtn, .recipe-edit .recipe-create-formHolder .addSBtn {
   max-width: 38px;
   height: 38px;
   margin: 0 auto;
   border: none;
   background-color: #FCBCB8;
   font-family: Caveat;
-  font-size: 20px;
+  font-size: 25px;
   border-radius: 45px;
   filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
   cursor: pointer;
   outline: none;
+  width: 38px;
+  height: 38px;
+  font-size: 25px;
   color: white;
   position: absolute;
-  top: -15px;
-  right: 0;
-  padding-top: 5px;
-  padding-bottom: 8.45px;
-  padding-left: 13px;
-  padding-right: 14px;
+  bottom: 10px;
+  right: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.recipe-edit .recipe-input-container #addRecipe {
+.recipe-edit .recipe-create-formHolder #createRecipeBtn {
   max-width: 422px;
   height: 52px;
   margin: 0 auto;
@@ -459,8 +466,9 @@ nav .nav-links button {
   outline: none;
   text-align: center;
   margin-bottom: 200px;
-  position: absolute;
-  left: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .recipe-view {
