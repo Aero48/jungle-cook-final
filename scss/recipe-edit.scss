@@ -71,10 +71,17 @@
       position: absolute;
       bottom: 10px;
       right: 10px;
-      text-align: center;
+      
       display: flex;
       align-items: center; 
       justify-content: center;
+
+      p{
+        text-align: center;
+        padding-bottom: 3px;
+        padding-right: 2px;
+
+      }
   
   }
 

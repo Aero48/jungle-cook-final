@@ -342,10 +342,14 @@ nav .nav-links button {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.recipe-create .recipe-create-formHolder .addBtn p, .recipe-create .recipe-create-formHolder .addSBtn p {
+  text-align: center;
+  padding-bottom: 3px;
+  padding-right: 2px;
 }
 .recipe-create .recipe-create-formHolder #createRecipeBtn {
   max-width: 422px;
@@ -447,10 +451,14 @@ nav .nav-links button {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.recipe-edit .recipe-create-formHolder .addBtn p, .recipe-edit .recipe-create-formHolder .addSBtn p {
+  text-align: center;
+  padding-bottom: 3px;
+  padding-right: 2px;
 }
 .recipe-edit .recipe-create-formHolder #createRecipeBtn {
   max-width: 422px;
