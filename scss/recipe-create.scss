@@ -7,7 +7,13 @@
     padding-right: 149px;
     margin: 0 auto;
 
-    h1{
+
+
+    .recipe-create-formHolder{
+      position: relative;
+      min-height: auto;
+
+      h1{
         text-align: left;
         font-size: 25px;
         font-family: CaveatBold;
@@ -24,6 +30,7 @@
 
       }
 
+
       .recipe-input-container{
         margin: 0 auto;
         // background-color: aqua;
@@ -34,8 +41,9 @@
         position: relative;
        
 
-        #recipe-input{
+        input, #step0, #step1,#step2, #ingred0, #ingred1, #ingred2{
             @include recipe-inputField(100%, 100%, 20px);
+  
         }
 
         #addFile{
@@ -49,11 +57,11 @@
 
       }
 
-      #plus{
+      .addBtn, .addSBtn{
         @include recipe-button(38px, 38px, 20px);
         color: white;
         position: absolute;
-        top: -15px;
+        bottom:10px;
         right: 0;
         padding-top: 5px;
         padding-bottom: 8.45px;
@@ -62,7 +70,7 @@
     }
 
 
-      #addRecipe{
+      #createRecipe{
         @include recipe-button(422px, 52px, 25px);
         text-align: center;
         margin-bottom: 200px;
@@ -70,6 +78,10 @@
         left: 250px;
         // center?
     }
+
+    }
+
+  
 
 
 }

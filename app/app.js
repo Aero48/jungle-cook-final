@@ -15,6 +15,54 @@ function changeRoute() {
   }
 }
 
+// create recipe function
+
+var ingredCnt = 3;
+var stepCnt = 3;
+
+var recipes = [];
+
+function initListener() {
+  $(".addBtn").on("click", (e) => {
+    $(".recipe-create-formHolder .recipe-input-container .ingred").append(
+      `<input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${
+        ingredCnt + 1
+      }" />`
+    );
+    ingredCnt++;
+  });
+
+  $(".addSBtn").on("click", (e) => {
+    $(".formHolder .steps").append(
+      `<input type="text" id="step${stepCnt}" placeholder="Step #${
+        stepCnt + 1
+      }" />`
+    );
+    stepCnt++;
+  });
+
+  $("#submitBtn").on("click", (e) => {
+    let recipeObj = {
+      description: "",
+      steps: [],
+      ingredients: [],
+    };
+
+    e.preventDefault();
+    $(".formHolder .steps input").each((idx, step) => {
+      recipeObj.steps.push({ step: step.value });
+    });
+    $(".formHolder .ingred input").each((idx, ingred) => {
+      recipeObj.ingredients.push({ ingred: ingred.value });
+    });
+
+    recipes.push(recipeObj);
+
+    console.log(recipeObj);
+  });
+}
+// end recipe function
+
 function initURLListener() {
   $(window).on("hashchange", changeRoute);
   changeRoute();
@@ -82,4 +130,5 @@ function initLoginListener() {
 
 $(document).ready(function () {
   initURLListener();
+  initListener();
 });

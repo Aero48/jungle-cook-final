@@ -270,20 +270,24 @@ nav .nav-links button {
   padding-right: 149px;
   margin: 0 auto;
 }
-.recipe-create h1 {
+.recipe-create .recipe-create-formHolder {
+  position: relative;
+  min-height: auto;
+}
+.recipe-create .recipe-create-formHolder h1 {
   text-align: left;
   font-size: 25px;
   font-family: CaveatBold;
   color: black;
 }
-.recipe-create h2 {
+.recipe-create .recipe-create-formHolder h2 {
   text-align: left;
   font-size: 20px;
   font-family: LatoBlack;
   color: black;
   margin-bottom: 50px;
 }
-.recipe-create .recipe-input-container {
+.recipe-create .recipe-create-formHolder .recipe-input-container {
   margin: 0 auto;
   height: 30px;
   width: 980px;
@@ -291,7 +295,7 @@ nav .nav-links button {
   margin-bottom: 100px;
   position: relative;
 }
-.recipe-create .recipe-input-container #recipe-input {
+.recipe-create .recipe-create-formHolder .recipe-input-container input, .recipe-create .recipe-create-formHolder .recipe-input-container #step0, .recipe-create .recipe-create-formHolder .recipe-input-container #step1, .recipe-create .recipe-create-formHolder .recipe-input-container #step2, .recipe-create .recipe-create-formHolder .recipe-input-container #ingred0, .recipe-create .recipe-create-formHolder .recipe-input-container #ingred1, .recipe-create .recipe-create-formHolder .recipe-input-container #ingred2 {
   width: 100%;
   height: 100%;
   font-family: LatoLight;
@@ -302,7 +306,7 @@ nav .nav-links button {
   background-color: transparent;
   outline: none;
 }
-.recipe-create .recipe-input-container #addFile {
+.recipe-create .recipe-create-formHolder .recipe-input-container #addFile {
   width: 110px;
   height: 36px;
   margin: 0 auto;
@@ -318,7 +322,7 @@ nav .nav-links button {
   top: -15px;
   right: 0;
 }
-.recipe-create #plus {
+.recipe-create .recipe-create-formHolder .addBtn, .recipe-create .recipe-create-formHolder .addSBtn {
   width: 38px;
   height: 38px;
   margin: 0 auto;
@@ -332,14 +336,14 @@ nav .nav-links button {
   outline: none;
   color: white;
   position: absolute;
-  top: -15px;
+  bottom: 10px;
   right: 0;
   padding-top: 5px;
   padding-bottom: 8.45px;
   padding-left: 13px;
   padding-right: 14px;
 }
-.recipe-create #addRecipe {
+.recipe-create .recipe-create-formHolder #createRecipe {
   width: 422px;
   height: 52px;
   margin: 0 auto;

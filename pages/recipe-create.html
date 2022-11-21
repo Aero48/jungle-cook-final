@@ -1,53 +1,60 @@
 <section class="recipe-create">
-  <h1>Hey Michael, create your recipe!</h1>
+  <div class="recipe-create-formHolder">
+    <h1>Hey Michael, create your recipe!</h1>
+    <div class="recipe-input-container">
+      <input type="submit" value="Add File" id="addFile" />
+      <input type="text" id="recipe-input" placeholder="Add Recipe Image" />
+    </div>
+    <div class="recipe-input-container">
+      <input type="text" placeholder="Recipe Name" />
+    </div>
+    <div class="recipe-input-container">
+      <input type="text" placeholder="Recipe Description" />
+    </div>
+    <div class="recipe-input-container">
+      <input type="text" placeholder="Recipe Total Time" />
+    </div>
+    <div class="recipe-input-container">
+      <input type="text" placeholder="Recipe Serving Size" />
+    </div>
+  </div>
 
-  <div class="recipe-input-container">
-    <input type="submit" value="Add File" id="addFile" />
-    <input type="text" id="recipe-input" placeholder="Add Recipe Image" />
-  </div>
-  <div class="recipe-input-container">
-    <input type="text" id="recipe-input" placeholder="Recipe Name" />
-  </div>
-  <div class="recipe-input-container">
-    <input type="text" id="recipe-input" placeholder="Recipe Description" />
-  </div>
-  <div class="recipe-input-container">
-    <input type="text" id="recipe-input" placeholder="Recipe Total Time" />
-  </div>
-  <div class="recipe-input-container">
-    <input type="text" id="recipe-input" placeholder="Recipe Serving Size" />
-  </div>
-
-  <div class="recipe-create-ingredients">
+  <div class="recipe-create-formHolder">
     <h2>Enter Ingredients:</h2>
     <div class="recipe-input-container">
-      <input type="text" id="recipe-input" placeholder="Ingredient #1" />
+      <input type="text" id="ingred0" placeholder="Ingredient #1" />
     </div>
     <div class="recipe-input-container">
-      <input type="text" id="recipe-input" placeholder="Ingredient #2" />
+      <input type="text" id="ingred1" placeholder="Ingredient #2" />
     </div>
     <div class="recipe-input-container">
-      <input type="text" id="recipe-input" placeholder="Ingredient #3" />
+      <input type="text" id="ingred2" placeholder="Ingredient #3" />
     </div>
 
-    <input type="submit" value="+" id="plus" />
+    <input class="addBtn" type="submit" value="+" />
   </div>
 
-  <div class="recipe-create-instructions">
+  <div class="recipe-create-formHolder">
     <h2>Enter Instructions:</h2>
+
     <div class="recipe-input-container">
-      <input type="text" id="recipe-input" placeholder="Instruction #1" />
+      <input type="text" id="step0" placeholder="Instruction #1" />
     </div>
+
     <div class="recipe-input-container">
-      <input type="text" id="recipe-input" placeholder="Instruction #2" />
+      <input type="text" id="step1" placeholder="Instruction #2" />
     </div>
+
     <div class="recipe-input-container">
-      <input type="text" id="recipe-input" placeholder="Instruction #3" />
+      <input type="text" id="step2" placeholder="Instruction #3" />
     </div>
-    <input type="submit" value="+" id="plus" />
+
+    <input type="submit" class="addSBtn" value="+" />
   </div>
 
-  <div class="recipe-input-container">
-    <input type="submit" value="Create Recipe" id="addRecipe" />
+  <div class="recipe-create-formHolder">
+    <div class="recipe-input-container">
+      <input type="submit" id="createRecipe" value="Create Recipe" />
+    </div>
   </div>
 </section>
