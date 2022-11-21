@@ -8,13 +8,13 @@ For this final, your team will be taking this prototype, https://xd.adobe.com/sp
 
 ### Emma
 
-- Styling: Home, Recipe Edit, Recipe Change, Recipe View
-- Function: Login Page, Your Recipes Toggle, Make + button work, Make New Recipe
+- Styling: Home, Recipe Edit, Recipe Change, Recipe View, Page Resposiveness
+- Function: Login/ Sign-up Page , Your Recipes Toggle, Make + button work and put objects in array,
 
 ### Logan
 
 - Styling: Nav, Footer, Login, Browse, Your Recipes
-- Function: MVC Model, Recipe Injection,
+- Function: MVC Model, Recipe Injection, Make New Recipe
 
 ### Web 4 Link:
 
