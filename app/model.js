@@ -162,6 +162,16 @@ export function changePage(pageID, subpageID, callback) {
         }
       });
     });
+  } else if (pageID == "your-recipes") {
+    console.log("blah blah blah");
+    $.get(`pages/recipe-edit.html`, function (data) {
+      $("#app").html(data);
+      if (loginInfo.firstName == null) {
+        $(".recipe-edit h1").html(`Hey ${loginInfo.email}, edit your recipe!`);
+      } else {
+        $(".recipe-edit h1").html(`Hey ${loginInfo.firstName}, edit your recipe!`);
+      }
+    })
   } else {
     $.get(`pages/${pageID}.html`, function (contents) {
       $("#app").html(contents);
@@ -170,10 +180,10 @@ export function changePage(pageID, subpageID, callback) {
   }
 }
 
-export function setSignUpInfo(newUserObject) {
-  signupInfo = newUserObject;
-  console.log(signupInfo);
-}
+// export function setSignUpInfo(newUserObject) {
+//   signupInfo = newUserObject;
+//   console.log(signupInfo);
+// }
 
 export function setLoginInfo(userObject) {
   loginInfo = userObject;

@@ -66,8 +66,7 @@ function initURLListener() {
   changeRoute();
 }
 
-// sign-up function
-
+// calls signup/login functions
 function loginController() {
   initLoginListener();
   initSignUpListener();
@@ -91,7 +90,7 @@ function initSignUpListener() {
     } else if (pw == "") {
       alert("Enter password.");
     } else {
-      console.log("hello");
+      //console.log("hello");
       let newUserObj = {
         firstName: fn,
         lastName: ln,
@@ -99,7 +98,7 @@ function initSignUpListener() {
         password: pw,
       };
 
-      MODEL.setSignUpInfo(newUserObj);
+      MODEL.setLoginInfo(newUserObj);
       MODEL.toggleLogin();
       window.location.hash = "home";
     }
