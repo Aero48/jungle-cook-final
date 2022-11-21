@@ -11,7 +11,7 @@ function changeRoute() {
   } else if (pageID == "recipe-view") {
     MODEL.changePage(pageID, subpageID);
   } else if (pageID == "recipe-create") {
-    MODEL.changePage(pageID, subpageID, createRecipeController);
+    MODEL.changePage(pageID, subpageID, createRecipeListeners);
   } else {
     MODEL.changePage(pageID);
   }
@@ -19,20 +19,15 @@ function changeRoute() {
 
 // create recipe function
 
-function createRecipeController() {
-  initListener();
-}
 
-var ingredCnt = 3;
-var stepCnt = 3;
 
-var recipes = [];
+function createRecipeListeners() {
+  let ingredCnt = 3;
+  let stepCnt = 3;
 
-function initListener() {
   $(".addBtn").on("click", (e) => {
     $(".recipe-create-formHolder .ingred ").append(
-      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${
-        ingredCnt + 1
+      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${ingredCnt + 1
       }" /> </div>`
     );
     ingredCnt++;
@@ -40,31 +35,43 @@ function initListener() {
 
   $(".addSBtn").on("click", (e) => {
     $(".recipe-create-formHolder .steps").append(
-      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${
-        stepCnt + 1
+      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${stepCnt + 1
       }" /></div>`
     );
     stepCnt++;
   });
 
   $("#createRecipeBtn").on("click", (e) => {
+    e.preventDefault();
+
     let recipeObj = {
+      id: 0,
+      name: "",
+      img: "",
       description: "",
-      steps: [],
+      totalTime: "",
+      servings: "",
       ingredients: [],
+      instructions: [],
+      userId: 1
     };
 
-    e.preventDefault();
-    $(".recipe-create-formHolder .steps input").each((idx, step) => {
-      recipeObj.steps.push({ step: step.value });
-    });
+    recipeObj.img = $(".recipe-create-formHolder #create-recipe-img").val();
+    recipeObj.name = $(".recipe-create-formHolder #create-recipe-name").val();
+    recipeObj.description = $(".recipe-create-formHolder #create-recipe-description").val();
+    recipeObj.totalTime = $(".recipe-create-formHolder #create-recipe-time").val();
+    recipeObj.servings = $(".recipe-create-formHolder #create-recipe-serving").val();
     $(".recipe-create-formHolder .ingred input").each((idx, ingred) => {
-      recipeObj.ingredients.push({ ingred: ingred.value });
+      recipeObj.ingredients.push(ingred.value);
+    });
+    $(".recipe-create-formHolder .steps input").each((idx, step) => {
+      recipeObj.instructions.push(step.value);
     });
 
-    recipes.push(recipeObj);
 
     console.log(recipeObj);
+
+    MODEL.addRecipe(recipeObj);
   });
 }
 // end recipe function

@@ -2,6 +2,8 @@ var signupInfo = {};
 
 var loginInfo = {};
 
+var recipeCount = 2;
+
 var recipes = [
   {
     id: 0,
@@ -208,4 +210,10 @@ export function toggleLogin() {
     $("#yourRecipes").html("");
     $("#yourRecipes-footer").html("");
   }
+}
+
+export function addRecipe(recipeObj) {
+  recipeObj.id = recipeCount;
+  recipeCount++;
+  recipes.push(recipeObj);
 }
