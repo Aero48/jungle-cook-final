@@ -30,19 +30,19 @@ var recipes = [];
 
 function initListener() {
   $(".addBtn").on("click", (e) => {
-    $(".recipe-create-formHolder .ingred .recipe-input-container ").append(
-      `<input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${
+    $(".recipe-create-formHolder .ingred ").append(
+      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${
         ingredCnt + 1
-      }" />`
+      }" /> </div>`
     );
     ingredCnt++;
   });
 
   $(".addSBtn").on("click", (e) => {
-    $(".recipe-create-formHolder .steps .recipe-input-container").append(
-      `<input type="text" id="step${stepCnt}" placeholder="Instruction #${
+    $(".recipe-create-formHolder .steps").append(
+      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${
         stepCnt + 1
-      }" />`
+      }" /></div>`
     );
     stepCnt++;
   });
