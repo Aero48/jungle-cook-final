@@ -17,3 +17,7 @@ For this final, your team will be taking this prototype, https://xd.adobe.com/sp
 - Function: MVC Model, Recipe Injection,
 
 ### Web 4 Link:
+
+# Checklist Before Turning In:
+
+- Fix image squish in recipe view
