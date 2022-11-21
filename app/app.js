@@ -55,10 +55,10 @@ function initListener() {
     };
 
     e.preventDefault();
-    $(".formHolder .steps input").each((idx, step) => {
+    $(".recipe-create-formHolder .steps input").each((idx, step) => {
       recipeObj.steps.push({ step: step.value });
     });
-    $(".formHolder .ingred input").each((idx, ingred) => {
+    $(".recipe-create-formHolder .ingred input").each((idx, ingred) => {
       recipeObj.ingredients.push({ ingred: ingred.value });
     });
 
