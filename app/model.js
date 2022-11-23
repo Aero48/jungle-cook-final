@@ -64,7 +64,7 @@ var recipes = [
       "Let the sauce thicken slightly and then add the pasta and toss until coated in sauce.",
       "Garnish with parsley, and it's ready.",
     ],
-    userId: 0,
+    userId: 1,
   },
 ];
 
@@ -172,12 +172,52 @@ export function changePage(pageID, subpageID, callback) {
       } else {
         $(".recipe-edit h1").html(`Hey ${loginInfo.firstName}, edit your recipe!`);
       }
-    })
-  } else if (pageID == "recipe-create") {
-    $.get(`pages/recipe-create.html`, function (data) {
-      $("#app").html(data);
+      $(".recipe-list").html(``);
+      $.each(recipes, function (idx, recipe) {
+        if (recipe.userId == 1) {
+          $(
+            ".recipe-list"
+          ).append(`<div class="recipe-list-item" id="recipe-${recipe.id}">
+          <div class="recipe-list-item-content">
+            <a href="#recipe-view/${recipe.id}"><div
+              class="recipe-list-img"
+              style="background-image: url(${recipe.img})"
+            ></div></a>
+            <div class="recipe-list-text">
+            <a href="#recipe-view/${recipe.id}"><h2>${recipe.name}</h2></a>
+              <p>
+                ${recipe.description}
+              </p>
+              <div class="recipe-list-info">
+                <img src="./images/time.svg" alt="Cook Time" />
+                <p>${recipe.totalTime}</p>
+              </div>
+              <div class="recipe-list-info">
+                <img src="./images/servings.svg" alt="Servings" />
+                <p>${recipe.servings} servings</p>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-list-item-btns">
+        <button class="recipe-edit-btn">Edit Recipe</button>
+        <button class="recipe-delete-btn" id="recipe-delete-${recipe.id}">Delete</button>
+      </div>
+        </div>`);
+        }
+
+      });
       callback();
     })
+  } else if (pageID == "recipe-create") {
+    if (loggedIn == true) {
+      $.get(`pages/recipe-create.html`, function (data) {
+        $("#app").html(data);
+        callback();
+      })
+    } else {
+      window.location.hash = "login";
+    }
+
   } else {
     $.get(`pages/${pageID}.html`, function (contents) {
       $("#app").html(contents);

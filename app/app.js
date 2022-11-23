@@ -12,9 +12,22 @@ function changeRoute() {
     MODEL.changePage(pageID, subpageID);
   } else if (pageID == "recipe-create") {
     MODEL.changePage(pageID, subpageID, createRecipeListeners);
+  } else if (pageID == "your-recipes") {
+    MODEL.changePage(pageID, subpageID, yourRecipeListeners);
   } else {
     MODEL.changePage(pageID);
   }
+}
+
+function yourRecipeListeners() {
+  yourRecipeDeleteListener();
+}
+
+function yourRecipeDeleteListener() {
+  $(".recipe-delete-btn").on("click", (e) => {
+    let id = e.target.id.substring(14);
+    console.log(id);
+  })
 }
 
 // create recipe function
