@@ -582,7 +582,7 @@ nav .nav-links button {
   color: black;
   line-height: 0px;
 }
-.recipe-view .recipe-input-container #editRecipe {
+.recipe-view .recipe-input-container a button {
   max-width: 130px;
   height: 42px;
   margin: 0 auto;
@@ -597,6 +597,7 @@ nav .nav-links button {
   text-align: center;
   margin-top: 50px;
   background-color: #FFD972;
+  color: #000;
 }
 
 .login-content {

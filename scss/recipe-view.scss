@@ -124,13 +124,17 @@
     }
 
     .recipe-input-container{
-        #editRecipe{
-            @include recipe-button(130px, 42px, 20px);
-            text-align: center;
-            margin-top: 50px;
-            background-color: $site-yellow;
-            // center?
+      a {
+        button{
+          @include recipe-button(130px, 42px, 20px);
+          text-align: center;
+          margin-top: 50px;
+          background-color: $site-yellow;
+          color: $site-black;
+          // center?
         }
+
+      }
     }
 
     

@@ -14,6 +14,8 @@ function changeRoute() {
     MODEL.changePage(pageID, subpageID, createRecipeListeners);
   } else if (pageID == "your-recipes") {
     MODEL.changePage(pageID, subpageID, yourRecipeListeners);
+  } else if (pageID == "recipe-edit") {
+    MODEL.changePage(pageID, subpageID, editRecipeListeners);
   } else {
     MODEL.changePage(pageID);
   }
@@ -89,6 +91,62 @@ function createRecipeListeners() {
   });
 }
 // end recipe function
+
+function editRecipeListeners(ingredLength, stepsLength, id) {
+  let ingredCnt = ingredLength;
+  let stepCnt = stepsLength;
+
+  // console.log(ingredLength)
+  // console.log(stepsLength)
+  $(".addBtn").on("click", (e) => {
+    $(".recipe-create-formHolder .ingred ").append(
+      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${ingredCnt + 1
+      }" /> </div>`
+    );
+    ingredCnt++;
+  });
+
+  $(".addSBtn").on("click", (e) => {
+    $(".recipe-create-formHolder .steps").append(
+      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${stepCnt + 1
+      }" /></div>`
+    );
+    stepCnt++;
+  });
+
+  $("#createRecipeBtn").on("click", (e) => {
+    e.preventDefault();
+
+    let recipeObj = {
+      id: id,
+      name: "",
+      img: "",
+      description: "",
+      totalTime: "",
+      servings: "",
+      ingredients: [],
+      instructions: [],
+      userId: 1
+    };
+
+    recipeObj.img = $(".recipe-create-formHolder #edit-recipe-img").val();
+    recipeObj.name = $(".recipe-create-formHolder #edit-recipe-name").val();
+    recipeObj.description = $(".recipe-create-formHolder #edit-recipe-description").val();
+    recipeObj.totalTime = $(".recipe-create-formHolder #edit-recipe-time").val();
+    recipeObj.servings = $(".recipe-create-formHolder #edit-recipe-serving").val();
+    $(".recipe-create-formHolder .ingred input").each((idx, ingred) => {
+      recipeObj.ingredients.push(ingred.value);
+    });
+    $(".recipe-create-formHolder .steps input").each((idx, step) => {
+      recipeObj.instructions.push(step.value);
+    });
+
+
+    console.log(recipeObj);
+
+    MODEL.updateRecipe(recipeObj);
+  })
+}
 
 function initURLListener() {
   $(window).on("hashchange", changeRoute);

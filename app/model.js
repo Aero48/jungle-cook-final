@@ -150,7 +150,7 @@ export function changePage(pageID, subpageID, callback) {
         
       </div>
       <div class="recipe-input-container">
-        <input type="submit" value="Edit Recipe" id="editRecipe" />
+        
       </div>`);
           $(".ingredients").html(``);
           $.each(recipe.ingredients, function (idx, ingredient) {
@@ -161,6 +161,12 @@ export function changePage(pageID, subpageID, callback) {
           $.each(recipe.instructions, function (idx, instruction) {
             $(".instructions").append(`<p>${idx + 1}. ${instruction}</p>`);
           });
+
+          if (loggedIn == true && recipe.userId == 1) {
+            $(".recipe-input-container").html(`<a href="#recipe-edit/${recipe.id}">
+          <button id="editRecipe">Edit Recipe</button>
+        </a>`);
+          }
         }
       });
     });
@@ -184,7 +190,102 @@ export function changePage(pageID, subpageID, callback) {
     } else {
       window.location.hash = "login";
     }
+  } else if (pageID == "recipe-edit") {
+    if (loggedIn == true) {
+      $.get(`pages/recipe-edit.html`, function (data) {
+        $("#app").html(data);
+        $.each(recipes, function (idx, recipe) {
+          if (recipe.id == subpageID) {
+            $(".recipe-edit").html(`
+        <div class="recipe-create-formHolder">
+    <h1>Hey Michael, edit your recipe!</h1>
+    <div class="recipe-input-container">
+      <input type="submit" value="Add File" id="addFile" />
+      <input
+        type="text"
+        id="edit-recipe-img"
+        value="${recipe.img}"
+        placeholder="Add Recipe Image"
+      />
+    </div>
+    <div class="recipe-input-container">
+      <input type="text" id="edit-recipe-name"
+      value="${recipe.name}" placeholder="Recipe Name" />
+    </div>
+    <div class="recipe-input-container">
+      <input
+        type="text"
+        id="edit-recipe-description"
+        value="${recipe.description}"
+        placeholder="Recipe Description"
+      />
+    </div>
+    <div class="recipe-input-container">
+      <input
+        type="text"
+        id="edit-recipe-time"
+        value="${recipe.totalTime}"
+        placeholder="Recipe Total Time"
+      />
+    </div>
+    <div class="recipe-input-container">
+      <input
+        type="text"
+        id="edit-recipe-serving"
+        value="${recipe.servings}"
+        placeholder="Recipe Serving Size"
+      />
+    </div>
+  </div>
 
+  <div class="recipe-create-formHolder">
+    <h2>Enter Ingredients:</h2>
+    <div class="ingred">
+      
+      
+
+      <div class="addBtn"><p>+</p></div>
+    </div>
+  </div>
+
+  <div class="recipe-create-formHolder">
+    <h2>Enter Instructions:</h2>
+
+    <div class="steps">
+      
+      <div class="addSBtn"><p>+</p></div>
+    </div>
+  </div>
+
+  <div class="recipe-create-formHolder">
+    <div class="recipe-input-container">
+      <input type="submit" id="createRecipeBtn" value="Create Recipe" />
+    </div>
+  </div>`)
+            $.each(recipe.ingredients, function (idx, ingredient) {
+              $(".ingred").append(`<div class="recipe-input-container">
+              <input type="text" id="ingred${idx}" 
+              value="${ingredient}" placeholder="Ingredient #${idx + 1}" />
+            </div>`)
+            })
+
+            $.each(recipe.instructions, function (idx, step) {
+              $(".steps").append(`<div class="recipe-input-container">
+              <input type="text" id="step${idx}"
+              value="${step}" placeholder="Instruction #${idx + 1}" />
+            </div>`)
+            })
+
+            callback(recipe.ingredients.length, recipe.instructions.length, recipe.id);
+          }
+        })
+
+
+
+      })
+    } else {
+      window.location.hash = "login";
+    }
   } else {
     $.get(`pages/${pageID}.html`, function (contents) {
       $("#app").html(contents);
@@ -248,7 +349,7 @@ function resetYourRecipesView() {
             </div>
           </div>
           <div class="recipe-list-item-btns">
-        <button class="recipe-edit-btn">Edit Recipe</button>
+        <a href="#recipe-edit/${recipe.id}"><button class="recipe-edit-btn">Edit Recipe</button></a>
         <button class="recipe-delete-btn" id="recipe-delete-${recipe.id}">Delete</button>
       </div>
         </div>`);
@@ -271,4 +372,14 @@ export function deleteRecipe(id) {
     }
   })
 
+}
+
+export function updateRecipe(recipeObj) {
+  $.each(recipes, function (idx, recipe) {
+    if (recipeObj.id == recipe.id) {
+
+      recipes[idx] = recipeObj;
+      console.log(recipes)
+    }
+  })
 }
