@@ -27,6 +27,7 @@ function yourRecipeDeleteListener() {
   $(".recipe-delete-btn").on("click", (e) => {
     let id = e.target.id.substring(14);
     console.log(id);
+    MODEL.deleteRecipe(id);
   })
 }
 

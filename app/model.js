@@ -172,40 +172,7 @@ export function changePage(pageID, subpageID, callback) {
       } else {
         $(".recipe-edit h1").html(`Hey ${loginInfo.firstName}, edit your recipe!`);
       }
-      $(".recipe-list").html(``);
-      $.each(recipes, function (idx, recipe) {
-        if (recipe.userId == 1) {
-          $(
-            ".recipe-list"
-          ).append(`<div class="recipe-list-item" id="recipe-${recipe.id}">
-          <div class="recipe-list-item-content">
-            <a href="#recipe-view/${recipe.id}"><div
-              class="recipe-list-img"
-              style="background-image: url(${recipe.img})"
-            ></div></a>
-            <div class="recipe-list-text">
-            <a href="#recipe-view/${recipe.id}"><h2>${recipe.name}</h2></a>
-              <p>
-                ${recipe.description}
-              </p>
-              <div class="recipe-list-info">
-                <img src="./images/time.svg" alt="Cook Time" />
-                <p>${recipe.totalTime}</p>
-              </div>
-              <div class="recipe-list-info">
-                <img src="./images/servings.svg" alt="Servings" />
-                <p>${recipe.servings} servings</p>
-              </div>
-            </div>
-          </div>
-          <div class="recipe-list-item-btns">
-        <button class="recipe-edit-btn">Edit Recipe</button>
-        <button class="recipe-delete-btn" id="recipe-delete-${recipe.id}">Delete</button>
-      </div>
-        </div>`);
-        }
-
-      });
+      resetYourRecipesView();
       callback();
     })
   } else if (pageID == "recipe-create") {
@@ -252,8 +219,56 @@ export function toggleLogin() {
   }
 }
 
+function resetYourRecipesView() {
+  $(".recipe-list").html(``);
+  $.each(recipes, function (idx, recipe) {
+    if (recipe.userId == 1) {
+      $(
+        ".recipe-list"
+      ).append(`<div class="recipe-list-item" id="recipe-${recipe.id}">
+          <div class="recipe-list-item-content">
+            <a href="#recipe-view/${recipe.id}"><div
+              class="recipe-list-img"
+              style="background-image: url(${recipe.img})"
+            >
+            <button class="view-recipe">View</button></div></a>
+            <div class="recipe-list-text">
+            <a href="#recipe-view/${recipe.id}"><h2>${recipe.name}</h2></a>
+              <p>
+                ${recipe.description}
+              </p>
+              <div class="recipe-list-info">
+                <img src="./images/time.svg" alt="Cook Time" />
+                <p>${recipe.totalTime}</p>
+              </div>
+              <div class="recipe-list-info">
+                <img src="./images/servings.svg" alt="Servings" />
+                <p>${recipe.servings} servings</p>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-list-item-btns">
+        <button class="recipe-edit-btn">Edit Recipe</button>
+        <button class="recipe-delete-btn" id="recipe-delete-${recipe.id}">Delete</button>
+      </div>
+        </div>`);
+    }
+
+  });
+}
+
 export function addRecipe(recipeObj) {
   recipeObj.id = recipeCount;
   recipeCount++;
   recipes.push(recipeObj);
+}
+
+export function deleteRecipe(id) {
+  $.each(recipes, function (idx, recipe) {
+    if (id == recipe.id) {
+      recipes.splice(idx, 1);
+      resetYourRecipesView();
+    }
+  })
+
 }
