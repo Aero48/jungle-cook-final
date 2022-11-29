@@ -88,6 +88,7 @@ function createRecipeListeners() {
     console.log(recipeObj);
 
     MODEL.addRecipe(recipeObj);
+    window.location.hash = "recipes"
   });
 }
 // end recipe function
@@ -145,6 +146,7 @@ function editRecipeListeners(ingredLength, stepsLength, id) {
     console.log(recipeObj);
 
     MODEL.updateRecipe(recipeObj);
+    window.location.hash = "recipes"
   })
 }
 
