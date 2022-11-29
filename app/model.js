@@ -174,9 +174,9 @@ export function changePage(pageID, subpageID, callback) {
     $.get(`pages/your-recipes.html`, function (data) {
       $("#app").html(data);
       if (loginInfo.firstName == null) {
-        $(".recipe-edit h1").html(`Hey ${loginInfo.email}, edit your recipe!`);
+        $("#greeting").html(`Hey ${loginInfo.email}, here are your recipes!`);
       } else {
-        $(".recipe-edit h1").html(`Hey ${loginInfo.firstName}, edit your recipe!`);
+        $("#greeting").html(`Hey ${loginInfo.firstName}, here are your recipes!`);
       }
       resetYourRecipesView();
       callback();
@@ -186,6 +186,12 @@ export function changePage(pageID, subpageID, callback) {
       $.get(`pages/recipe-create.html`, function (data) {
         $("#app").html(data);
         callback();
+        if (loginInfo.firstName != null) {
+          $("#greeting").html(`Hey ${loginInfo.firstName}, edit your recipe!`);
+        } else {
+          $("#greeting").html(`Hey ${loginInfo.email}, edit your recipe!`);
+        }
+
       })
     } else {
       window.location.hash = "login";
@@ -198,7 +204,7 @@ export function changePage(pageID, subpageID, callback) {
           if (recipe.id == subpageID) {
             $(".recipe-edit").html(`
         <div class="recipe-create-formHolder">
-    <h1>Hey Michael, edit your recipe!</h1>
+    <h1 id="greeting">Hey Michael, edit your recipe!</h1>
     <div class="recipe-input-container">
       <input type="submit" value="Add File" id="addFile" />
       <input
@@ -277,6 +283,12 @@ export function changePage(pageID, subpageID, callback) {
             })
 
             callback(recipe.ingredients.length, recipe.instructions.length, recipe.id);
+
+            if (loginInfo.firstName != null) {
+              $("#greeting").html(`Hey ${loginInfo.firstName}, edit your recipe!`);
+            } else {
+              $("#greeting").html(`Hey ${loginInfo.email}, edit your recipe!`);
+            }
           }
         })
 
