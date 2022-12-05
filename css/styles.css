@@ -103,6 +103,7 @@ nav .nav-links button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 120px;
 }
 .home .circles {
   margin: 0 auto;
