@@ -80,6 +80,9 @@ nav .nav-links a {
   font-size: 25px;
   color: #000;
 }
+nav .nav-links .underline:hover {
+  border-bottom: 3px solid black;
+}
 nav .nav-links button {
   width: 158px;
   height: 52px;
@@ -93,20 +96,25 @@ nav .nav-links button {
 }
 
 .home {
+  margin: 0 auto;
   background-image: linear-gradient(rgba(242, 92, 84, 0.4), rgba(242, 92, 84, 0.4)), url(../images/hero.jpg);
   width: 100%;
   min-height: 800px;
-  margin: 0 auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
 }
-.home .yellow-ellipse {
+.home .circles {
+  margin: 0 auto;
+  position: relative;
+  height: 500px;
+  width: 500px;
+}
+.home .circles .yellow-ellipse {
   margin: 0 auto;
   position: absolute;
-  left: 400px;
-  top: 240px;
+  left: 75px;
+  top: 115px;
   height: 358px;
   width: 358px;
   background-color: #FFD972;
@@ -115,28 +123,28 @@ nav .nav-links button {
   text-align: center;
   padding-top: 120px;
 }
-.home .yellow-ellipse .yellow-elipse-text {
+.home .circles .yellow-ellipse .yellow-elipse-text {
   margin: 0 auto;
   width: 164px;
   height: 140px;
 }
-.home .yellow-ellipse .yellow-elipse-text h1 {
+.home .circles .yellow-ellipse .yellow-elipse-text h1 {
   text-align: center;
   font-size: 24px;
   font-family: CaveatBold;
   color: black;
 }
-.home .yellow-ellipse .yellow-elipse-text p {
+.home .circles .yellow-ellipse .yellow-elipse-text p {
   margin-top: 20px;
   text-align: center;
   font-size: 13px;
   font-family: Lato;
   color: black;
 }
-.home .pink-ellipse {
+.home .circles .pink-ellipse {
   position: absolute;
-  left: 680px;
-  top: 200px;
+  left: 275px;
+  top: 20px;
   height: 168px;
   width: 168px;
   background-color: #FCBCB8;
@@ -144,12 +152,12 @@ nav .nav-links button {
   display: inline-block;
   padding-top: 60px;
 }
-.home .pink-ellipse .pink-ellipse-text {
+.home .circles .pink-ellipse .pink-ellipse-text {
   margin: 0 auto;
   width: 106px;
   height: 40px;
 }
-.home .pink-ellipse .pink-ellipse-text p {
+.home .circles .pink-ellipse .pink-ellipse-text p {
   text-align: center;
   font-size: 10px;
   font-family: Lato;

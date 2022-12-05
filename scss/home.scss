@@ -1,50 +1,121 @@
 .home{
+    margin: 0 auto;
     background-image: linear-gradient(rgba(242, 92, 84, .4), rgba(242, 92, 84, .4)),url(../images/hero.jpg);
     width: 100%;
     min-height: 800px;
-    margin: 0 auto;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
 
 
-    .yellow-ellipse {
+    .circles{
       margin: 0 auto;
-      position: absolute;
-      left: 400px;
-      top: 240px;
-        height: 358px;
-        width: 358px;
-        background-color: #FFD972;
-        border-radius: 50%;
-        display: inline-block;
-        text-align: center;
-        padding-top: 120px;
+      position: relative;
+      height: 500px;
+      width: 500px;
+      // background-color: red;
+
+      .yellow-ellipse {
+        margin: 0 auto;
+        position:absolute;
+        left: 75px;
+        top: 115px;
+          height: 358px;
+          width: 358px;
+          background-color: #FFD972;
+          border-radius: 50%;
+          display: inline-block;
+          text-align: center;
+          padding-top: 120px;
+  
+          .yellow-elipse-text{
+            margin: 0 auto;
+            width: 164px;
+            height: 140px;
+            // background-color: aliceblue;
+            h1{
+              text-align: center;
+              // width: 164px;
+              font-size: 24px;
+              font-family: CaveatBold;
+              color: black;
+      
+            }
+  
+    
+            p{
+              margin-top: 20px;
+              text-align: center;
+              // width: 164px;
+              // height: 80px;
+              font-size: 13px;
+              font-family:Lato;
+              color: black;
+    
+    
+            }
+  
+          }
+  
+          
+        }
+  
+        .pink-ellipse {
+          position: absolute;
+        left: 275px;
+        top: 20px;
+          height: 168px;
+          width: 168px;
+          background-color:#FCBCB8;
+          border-radius: 50%;
+          display: inline-block;
+          padding-top: 60px;
+  
+          .pink-ellipse-text{
+            margin: 0 auto;
+            width: 106px;
+            height: 40px;
+            // background-color: aliceblue;
+  
+            p{
+           
+              text-align: center;
+              // width: 164px;
+              font-size: 10px;
+              font-family: Lato;
+              font-style: italic;
+              color: black;
+    
+    
+            }
+  
+          }
+  
+          
+        }
+  }
+
+    }
+
+
+
+
+@media screen and (max-width: 800px){
+  .home{
+    
+    .yellow-ellipse {
+     
 
         .yellow-elipse-text{
-          margin: 0 auto;
-          width: 164px;
-          height: 140px;
-          // background-color: aliceblue;
+         
           h1{
-            text-align: center;
-            // width: 164px;
-            font-size: 24px;
-            font-family: CaveatBold;
-            color: black;
+           
     
           }
 
   
           p{
-            margin-top: 20px;
-            text-align: center;
-            // width: 164px;
-            // height: 80px;
-            font-size: 13px;
-            font-family:Lato;
-            color: black;
+           
   
   
           }
@@ -55,30 +126,14 @@
       }
 
       .pink-ellipse {
-        position: absolute;
-      left: 680px;
-      top: 200px;
-        height: 168px;
-        width: 168px;
-        background-color:#FCBCB8;
-        border-radius: 50%;
-        display: inline-block;
-        padding-top: 60px;
+    
 
         .pink-ellipse-text{
-          margin: 0 auto;
-          width: 106px;
-          height: 40px;
-          // background-color: aliceblue;
+         
 
           p{
          
-            text-align: center;
-            // width: 164px;
-            font-size: 10px;
-            font-family: Lato;
-            font-style: italic;
-            color: black;
+           
   
   
           }
@@ -87,4 +142,54 @@
 
         
       }
+}
+
+}
+
+@media screen and (max-width: 360px){
+  .home{
+    
+
+
+    .yellow-ellipse {
+     
+
+        .yellow-elipse-text{
+         
+          h1{
+           
+    
+          }
+
+  
+          p{
+           
+  
+  
+          }
+
+        }
+
+        
+      }
+
+      .pink-ellipse {
+    
+
+        .pink-ellipse-text{
+         
+
+          p{
+         
+           
+  
+  
+          }
+
+        }
+
+        
+      }
+}
+
 }

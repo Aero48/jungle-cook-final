@@ -1,4 +1,4 @@
-nav {
+nav{
     //width: $site-width;
     width: 100%;
     height: 132px;
@@ -29,12 +29,22 @@ nav {
             font-family: Caveat;
             font-size: 25px;
             color: $site-black;
-            
         }
+
+        .underline:hover{
+            border-bottom: 3px solid black;
+        }
+
+        
+
+       
 
 
         button {
             @include button;
+
+           
+
         }
     }
 }
