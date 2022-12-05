@@ -76,7 +76,6 @@ export function changePage(pageID, subpageID, callback) {
   if (pageID == "" || pageID == "home") {
     $.get(`pages/home.html`, function (contents) {
       $("#app").html(contents);
-      console.log(pageID);
     });
   } else if (pageID == "login") {
     if (loggedIn == false) {
@@ -393,7 +392,6 @@ export function updateRecipe(recipeObj) {
   $.each(recipes, function (idx, recipe) {
     if (recipeObj.id == recipe.id) {
       recipes[idx] = recipeObj;
-      console.log(recipes)
     }
   })
 }
