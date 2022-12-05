@@ -4,9 +4,15 @@ function changeRoute() {
   let pageURL = window.location.hash.replace("#", "");
   //Splits the page url up by slashes and puts the pieces into an array
   let pageLayers = pageURL.split("/");
+
+  //Takes each piece of the array and assigns them to pageID and subpageID respectively
   let pageID = pageLayers[0];
   let subpageID = pageLayers[1];
-  if (pageID == "" || pageID == "home" || pageID == "login") {
+
+  //Loads different model functions depending on the pageID
+  if (pageID == "" || pageID == "home") {
+    MODEL.changePage(pageID);
+  } else if (pageID == "login") {
     MODEL.changePage(pageID, subpageID, loginController);
   } else if (pageID == "recipe-view") {
     MODEL.changePage(pageID, subpageID);
@@ -21,26 +27,26 @@ function changeRoute() {
   }
 }
 
+/**
+ * When the user clicks on a recipe-delete-btn, get the id of the recipe and pass it to the
+ * deleteRecipe function in the MODEL.
+ */
 function yourRecipeListeners() {
-  yourRecipeDeleteListener();
-}
-
-function yourRecipeDeleteListener() {
   $(".recipe-delete-btn").on("click", (e) => {
     let id = e.target.id.substring(14);
-    console.log(id);
     MODEL.deleteRecipe(id);
   })
 }
 
-// create recipe function
-
-
-
+/**
+ * It's a function that creates event listeners for the create recipe page.
+ */
 function createRecipeListeners() {
+  //Variables that determine the amount of ingredients & steps in the current recipe form (starts at 3)
   let ingredCnt = 3;
   let stepCnt = 3;
 
+  //Click listeners that add new ingredient/step rows to the form
   $(".addBtn").on("click", (e) => {
     $(".recipe-create-formHolder .ingred ").append(
       `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${ingredCnt + 1
@@ -57,6 +63,7 @@ function createRecipeListeners() {
     stepCnt++;
   });
 
+  //Pulls all the information from the form, stores it in a temporary object, then adds the recipe through the model
   $("#createRecipeBtn").on("click", (e) => {
     e.preventDefault();
 
@@ -84,21 +91,18 @@ function createRecipeListeners() {
       recipeObj.instructions.push(step.value);
     });
 
-
-    console.log(recipeObj);
-
     MODEL.addRecipe(recipeObj);
     window.location.hash = "recipes"
   });
 }
-// end recipe function
 
+// Event listeners for edit recipe page
 function editRecipeListeners(ingredLength, stepsLength, id) {
+  // Pulls amount of ingredents & steps from selected recipe
   let ingredCnt = ingredLength;
   let stepCnt = stepsLength;
 
-  // console.log(ingredLength)
-  // console.log(stepsLength)
+  // Click listeners that add new ingredient/step rows to the form
   $(".addBtn").on("click", (e) => {
     $(".recipe-create-formHolder .ingred ").append(
       `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${ingredCnt + 1
@@ -115,6 +119,7 @@ function editRecipeListeners(ingredLength, stepsLength, id) {
     stepCnt++;
   });
 
+  //Pulls all the information from the form, stores it in a temporary object, then updates the current recipe through the model
   $("#createRecipeBtn").on("click", (e) => {
     e.preventDefault();
 
@@ -142,17 +147,9 @@ function editRecipeListeners(ingredLength, stepsLength, id) {
       recipeObj.instructions.push(step.value);
     });
 
-
-    console.log(recipeObj);
-
     MODEL.updateRecipe(recipeObj);
     window.location.hash = "recipes"
   })
-}
-
-function initURLListener() {
-  $(window).on("hashchange", changeRoute);
-  changeRoute();
 }
 
 // calls signup/login functions
@@ -161,9 +158,9 @@ function loginController() {
   initSignUpListener();
 }
 
+// Listener for the sign up form. When button is clicked, sign up info is stored and user is logged in.
 function initSignUpListener() {
   $("#signup-submit").on("click", function (e) {
-    console.log("submit");
 
     let fn = $("#signup-fn").val();
     let ln = $("#signup-ln").val();
@@ -179,7 +176,6 @@ function initSignUpListener() {
     } else if (pw == "") {
       alert("Enter password.");
     } else {
-      //console.log("hello");
       let newUserObj = {
         firstName: fn,
         lastName: ln,
@@ -193,11 +189,10 @@ function initSignUpListener() {
     }
   });
 }
-// login function
+
+// Listener for the login form. When button is clicked, login info is stored and user is logged in.
 function initLoginListener() {
   $("#login-submit").on("click", function (e) {
-    console.log("submit");
-
     let lem = $("#login-email").val();
     let lpw = $("#login-pw").val();
 
@@ -206,7 +201,6 @@ function initLoginListener() {
     } else if (lpw == "") {
       alert("Enter password.");
     } else {
-      console.log("welcome");
       let userObj = {
         email: lem,
         password: lpw,
@@ -219,6 +213,13 @@ function initLoginListener() {
   });
 }
 
+// Listens for hash changes and changes the route depending on it
+function initURLListener() {
+  $(window).on("hashchange", changeRoute);
+  changeRoute();
+}
+
+// Runs initURLListener function when the page is ready
 $(document).ready(function () {
   initURLListener();
 });
