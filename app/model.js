@@ -1,9 +1,10 @@
-var signupInfo = {};
-
+// Stored user login info
 var loginInfo = {};
 
+// Keeps track of number of recipes for assigning new ids
 var recipeCount = 2;
 
+// Array of recipe objects
 var recipes = [
   {
     id: 0,
@@ -70,6 +71,7 @@ var recipes = [
 
 var loggedIn = false;
 
+// Sets page content depending on pageID & subpageID. Also can run app.js callback functions for event listeners.
 export function changePage(pageID, subpageID, callback) {
   if (pageID == "" || pageID == "home") {
     $.get(`pages/home.html`, function (contents) {
@@ -90,85 +92,12 @@ export function changePage(pageID, subpageID, callback) {
     $.get(`pages/recipes.html`, function (data) {
       $("#app").html(data);
       $(".recipe-list").html(``);
-      $.each(recipes, function (idx, recipe) {
-        $(
-          ".recipe-list"
-        ).append(`<div class="recipe-list-item" id="recipe-${recipe.id}">
-        <div class="recipe-list-item-content">
-          <a href="#recipe-view/${recipe.id}"><div
-            class="recipe-list-img"
-            style="background-image: url(${recipe.img})"
-          ></div></a>
-          <div class="recipe-list-text">
-          <a href="#recipe-view/${recipe.id}"><h2>${recipe.name}</h2></a>
-            <p>
-              ${recipe.description}
-            </p>
-            <div class="recipe-list-info">
-              <img src="./images/time.svg" alt="Cook Time" />
-              <p>${recipe.totalTime}</p>
-            </div>
-            <div class="recipe-list-info">
-              <img src="./images/servings.svg" alt="Servings" />
-              <p>${recipe.servings} servings</p>
-            </div>
-          </div>
-        </div>
-      </div>`);
-      });
+      displayRecipes();
     });
   } else if (pageID == "recipe-view") {
-    console.log("test");
     $.get(`pages/recipe-view.html`, function (data) {
       $("#app").html(data);
-      $.each(recipes, function (idx, recipe) {
-        if (recipe.id == subpageID) {
-          $(".recipe-view").html(`<div class="description">
-        <label for="recipe-view-title" id="recipe-view-title">${recipe.name}</label>
-        <div>
-          <img class="recipe-image" src="${recipe.img}" alt="" />
-        </div>
-        <div class="recipe-description">
-          <h2>Description:</h2>
-          <p>
-            ${recipe.description}
-          </p>
-          <h3>Total Time:</h3>
-          <p>${recipe.totalTime}</p>
-    
-          <h3>Servings:</h3>
-          <p>${recipe.servings} servings</p>
-        </div>
-      </div>
-    
-      <div class="ingredients">
-        <h2>Ingredients:</h2>
-      </div>
-    
-      <div class="instructions">
-        <h2>Instructions:</h2>
-        
-      </div>
-      <div class="recipe-input-container">
-        
-      </div>`);
-          $(".ingredients").html(``);
-          $.each(recipe.ingredients, function (idx, ingredient) {
-            $(".ingredients").append(`<p>${ingredient}</p>`);
-          });
-
-          $(".instructions").html(``);
-          $.each(recipe.instructions, function (idx, instruction) {
-            $(".instructions").append(`<p>${idx + 1}. ${instruction}</p>`);
-          });
-
-          if (loggedIn == true && recipe.userId == 1) {
-            $(".recipe-input-container").html(`<a href="#recipe-edit/${recipe.id}">
-          <button id="editRecipe">Edit Recipe</button>
-        </a>`);
-          }
-        }
-      });
+      displayRecipeDetails(subpageID);
     });
   } else if (pageID == "your-recipes") {
     $.get(`pages/your-recipes.html`, function (data) {
@@ -291,9 +220,6 @@ export function changePage(pageID, subpageID, callback) {
             }
           }
         })
-
-
-
       })
     } else {
       window.location.hash = "login";
@@ -301,21 +227,97 @@ export function changePage(pageID, subpageID, callback) {
   } else {
     $.get(`pages/${pageID}.html`, function (contents) {
       $("#app").html(contents);
-      console.log(pageID);
     });
   }
 }
 
-// export function setSignUpInfo(newUserObject) {
-//   signupInfo = newUserObject;
-//   console.log(signupInfo);
-// }
+// Displays array of recipes on page
+function displayRecipes() {
+  $.each(recipes, function (idx, recipe) {
+    $(
+      ".recipe-list"
+    ).append(`<div class="recipe-list-item" id="recipe-${recipe.id}">
+    <div class="recipe-list-item-content">
+      <a href="#recipe-view/${recipe.id}"><div
+        class="recipe-list-img"
+        style="background-image: url(${recipe.img})"
+      ></div></a>
+      <div class="recipe-list-text">
+      <a href="#recipe-view/${recipe.id}"><h2>${recipe.name}</h2></a>
+        <p>
+          ${recipe.description}
+        </p>
+        <div class="recipe-list-info">
+          <img src="./images/time.svg" alt="Cook Time" />
+          <p>${recipe.totalTime}</p>
+        </div>
+        <div class="recipe-list-info">
+          <img src="./images/servings.svg" alt="Servings" />
+          <p>${recipe.servings} servings</p>
+        </div>
+      </div>
+    </div>
+  </div>`);
+  });
+}
+
+// Displays details of a specific recipe on the page
+function displayRecipeDetails(subpageID) {
+  $.each(recipes, function (idx, recipe) {
+    if (recipe.id == subpageID) {
+      $(".recipe-view").html(`<div class="description">
+    <label for="recipe-view-title" id="recipe-view-title">${recipe.name}</label>
+    <div>
+      <img class="recipe-image" src="${recipe.img}" alt="" />
+    </div>
+    <div class="recipe-description">
+      <h2>Description:</h2>
+      <p>
+        ${recipe.description}
+      </p>
+      <h3>Total Time:</h3>
+      <p>${recipe.totalTime}</p>
+
+      <h3>Servings:</h3>
+      <p>${recipe.servings} servings</p>
+    </div>
+  </div>
+
+  <div class="ingredients">
+    <h2>Ingredients:</h2>
+  </div>
+
+  <div class="instructions">
+    <h2>Instructions:</h2>
+    
+  </div>
+  <div class="recipe-input-container">
+    
+  </div>`);
+      $(".ingredients").html(``);
+      $.each(recipe.ingredients, function (idx, ingredient) {
+        $(".ingredients").append(`<p>${ingredient}</p>`);
+      });
+
+      $(".instructions").html(``);
+      $.each(recipe.instructions, function (idx, instruction) {
+        $(".instructions").append(`<p>${idx + 1}. ${instruction}</p>`);
+      });
+
+      if (loggedIn == true && recipe.userId == 1) {
+        $(".recipe-input-container").html(`<a href="#recipe-edit/${recipe.id}">
+      <button id="editRecipe">Edit Recipe</button>
+    </a>`);
+      }
+    }
+  });
+}
 
 export function setLoginInfo(userObject) {
   loginInfo = userObject;
-  console.log(loginInfo);
 }
 
+// Main toggle for user login. Makes changes to the site depending on login status.
 export function toggleLogin() {
   if (!loggedIn) {
     loggedIn = true;
@@ -366,17 +368,17 @@ function resetYourRecipesView() {
       </div>
         </div>`);
     }
-
   });
 }
 
+// Adds a new recipe to the array
 export function addRecipe(recipeObj) {
   recipeObj.id = recipeCount;
   recipeCount++;
   recipes.push(recipeObj);
-
 }
 
+// Removes a specific recipe from the array
 export function deleteRecipe(id) {
   $.each(recipes, function (idx, recipe) {
     if (id == recipe.id) {
@@ -384,13 +386,12 @@ export function deleteRecipe(id) {
       resetYourRecipesView();
     }
   })
-
 }
 
+// Updates an existing recipe in the array
 export function updateRecipe(recipeObj) {
   $.each(recipes, function (idx, recipe) {
     if (recipeObj.id == recipe.id) {
-
       recipes[idx] = recipeObj;
       console.log(recipes)
     }
