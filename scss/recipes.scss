@@ -94,3 +94,169 @@
         
     }
 }
+
+
+@media screen and (max-width: 800px){
+    .recipes-content {
+       
+    
+        h1 {
+            
+        }
+    
+        .recipe-list {
+            
+            flex-direction: column;
+          
+    
+            .recipe-list-item {
+                .recipe-list-item-content {
+                    
+                    .recipe-list-img {
+                        
+                        
+                        button {
+                        
+                        }
+                    }
+                    .recipe-list-text {
+                        
+                        a h2 {
+                            
+                        }
+                        p {
+                            
+                        }
+                        .recipe-list-info {
+                            img {
+                               
+                            }
+                        }
+                    }
+                }
+                .recipe-list-item-btns {
+                    
+                    button {
+                       
+                    }
+                }
+            }
+    
+            
+        }
+    }
+
+
+}
+
+
+@media screen and (max-width: 400px){
+
+    .recipes-content {
+        width: 360px;
+        min-height: 100vh;
+        padding: 0 0px;
+        padding-top: $nav-height;
+        background-image: linear-gradient(rgba($site-green, 0.8),rgba($site-green, 0.8)), url(../images/recipe-hero.jpg);
+        @include bgImg;
+    
+        h1 {
+    
+            margin-top: 60px;
+            padding-left: 40px;
+            font-family: CaveatBold;
+            font-size: 25px;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+        }
+    
+        .recipe-list {
+            width: 100%;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            //justify-content: space-evenly;
+            //justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+    
+            padding-bottom: 100px;
+    
+            .recipe-list-item {
+                .recipe-list-item-content {
+                    margin: 0 auto;
+                    width: 300px;
+                    height: 263px;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 100px;
+                    padding: 5px;
+
+        
+                    .recipe-list-img {
+                        margin: 0 auto;
+                        width: 300px;
+                        height: 150px;
+                        border-radius: 20px;
+                        @include bgImg;
+                        
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        button {
+                            @include button;
+                        }
+                    }
+                    .recipe-list-text {
+                        width: 300px;
+                        min-height: 200px;
+                        background-color: $site-white;
+                        border-radius: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 18px;
+                        a h2 {
+                            color: $site-black;
+                            width: 130px;
+                            font-family: LatoBlack;
+                            font-size: 15px;
+                            border-bottom: solid 3px $site-black;
+                            letter-spacing: 1px;
+                            word-wrap: none;
+                        }
+                        p {
+                            width: 250px;
+                            font-family: Lato;
+                            font-size: 9px;
+                            letter-spacing: 1px;
+                            text-align: center;
+                        }
+                        .recipe-list-info {
+                            width: 90px;
+                            height: 24px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            img {
+                                width: 24px;
+                            }
+                        }
+                    }
+                }
+                .recipe-list-item-btns {
+                    margin-top: 15px;
+                    button {
+                        @include button;
+                    }
+                }
+            }
+    
+            
+        }
+    }
+}
+
