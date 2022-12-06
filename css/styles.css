@@ -170,6 +170,16 @@ a {
   color: black;
 }
 
+@media screen and (max-width: 400px) {
+  .home .yellow-ellipse {
+    height: 258px;
+    width: 258px;
+  }
+  .home .pink-ellipse {
+    height: 121px;
+    width: 121px;
+  }
+}
 .recipes-content {
   width: 100%;
   min-height: 100vh;
