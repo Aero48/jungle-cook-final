@@ -48,7 +48,7 @@
                 }
                 .recipe-list-text {
                     width: 224px;
-                    height: 263px;
+                    min-height: 263px;
                     background-color: $site-white;
                     border-radius: 20px;
                     display: flex;
