@@ -35,7 +35,7 @@ function yourRecipeListeners() {
   $(".recipe-delete-btn").on("click", (e) => {
     let id = e.target.id.substring(14);
     MODEL.deleteRecipe(id);
-  })
+  });
 }
 
 /**
@@ -49,7 +49,8 @@ function createRecipeListeners() {
   //Click listeners that add new ingredient/step rows to the form
   $(".addBtn").on("click", (e) => {
     $(".recipe-create-formHolder .ingred ").append(
-      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${ingredCnt + 1
+      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${
+        ingredCnt + 1
       }" /> </div>`
     );
     ingredCnt++;
@@ -57,7 +58,8 @@ function createRecipeListeners() {
 
   $(".addSBtn").on("click", (e) => {
     $(".recipe-create-formHolder .steps").append(
-      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${stepCnt + 1
+      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${
+        stepCnt + 1
       }" /></div>`
     );
     stepCnt++;
@@ -76,14 +78,20 @@ function createRecipeListeners() {
       servings: "",
       ingredients: [],
       instructions: [],
-      userId: 1
+      userId: 1,
     };
 
     recipeObj.img = $(".recipe-create-formHolder #create-recipe-img").val();
     recipeObj.name = $(".recipe-create-formHolder #create-recipe-name").val();
-    recipeObj.description = $(".recipe-create-formHolder #create-recipe-description").val();
-    recipeObj.totalTime = $(".recipe-create-formHolder #create-recipe-time").val();
-    recipeObj.servings = $(".recipe-create-formHolder #create-recipe-serving").val();
+    recipeObj.description = $(
+      ".recipe-create-formHolder #create-recipe-description"
+    ).val();
+    recipeObj.totalTime = $(
+      ".recipe-create-formHolder #create-recipe-time"
+    ).val();
+    recipeObj.servings = $(
+      ".recipe-create-formHolder #create-recipe-serving"
+    ).val();
     $(".recipe-create-formHolder .ingred input").each((idx, ingred) => {
       recipeObj.ingredients.push(ingred.value);
     });
@@ -92,7 +100,7 @@ function createRecipeListeners() {
     });
 
     MODEL.addRecipe(recipeObj);
-    window.location.hash = "recipes"
+    window.location.hash = "recipes";
   });
 }
 
@@ -105,7 +113,8 @@ function editRecipeListeners(ingredLength, stepsLength, id) {
   // Click listeners that add new ingredient/step rows to the form
   $(".addBtn").on("click", (e) => {
     $(".recipe-create-formHolder .ingred ").append(
-      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${ingredCnt + 1
+      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${
+        ingredCnt + 1
       }" /> </div>`
     );
     ingredCnt++;
@@ -113,7 +122,8 @@ function editRecipeListeners(ingredLength, stepsLength, id) {
 
   $(".addSBtn").on("click", (e) => {
     $(".recipe-create-formHolder .steps").append(
-      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${stepCnt + 1
+      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${
+        stepCnt + 1
       }" /></div>`
     );
     stepCnt++;
@@ -132,14 +142,20 @@ function editRecipeListeners(ingredLength, stepsLength, id) {
       servings: "",
       ingredients: [],
       instructions: [],
-      userId: 1
+      userId: 1,
     };
 
     recipeObj.img = $(".recipe-create-formHolder #edit-recipe-img").val();
     recipeObj.name = $(".recipe-create-formHolder #edit-recipe-name").val();
-    recipeObj.description = $(".recipe-create-formHolder #edit-recipe-description").val();
-    recipeObj.totalTime = $(".recipe-create-formHolder #edit-recipe-time").val();
-    recipeObj.servings = $(".recipe-create-formHolder #edit-recipe-serving").val();
+    recipeObj.description = $(
+      ".recipe-create-formHolder #edit-recipe-description"
+    ).val();
+    recipeObj.totalTime = $(
+      ".recipe-create-formHolder #edit-recipe-time"
+    ).val();
+    recipeObj.servings = $(
+      ".recipe-create-formHolder #edit-recipe-serving"
+    ).val();
     $(".recipe-create-formHolder .ingred input").each((idx, ingred) => {
       recipeObj.ingredients.push(ingred.value);
     });
@@ -148,8 +164,8 @@ function editRecipeListeners(ingredLength, stepsLength, id) {
     });
 
     MODEL.updateRecipe(recipeObj);
-    window.location.hash = "recipes"
-  })
+    window.location.hash = "recipes";
+  });
 }
 
 // calls signup/login functions
@@ -161,7 +177,6 @@ function loginController() {
 // Listener for the sign up form. When button is clicked, sign up info is stored and user is logged in.
 function initSignUpListener() {
   $("#signup-submit").on("click", function (e) {
-
     let fn = $("#signup-fn").val();
     let ln = $("#signup-ln").val();
     let em = $("#signup-email").val();
