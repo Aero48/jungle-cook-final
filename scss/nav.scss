@@ -19,8 +19,11 @@ nav{
     }
 
     .navigation{
+        position: relative;
+
 
         .hamburger{
+            left: 50px;
             position: relative;
             width: 30px;
             height: 4px;
@@ -51,6 +54,7 @@ nav{
             width: 30px;
         }
     .toggle-menu{
+        left: 50px;
         position: absolute;
         width: 30px;
         height: 100%;
@@ -83,15 +87,24 @@ nav{
     }
 
 
-   
+    input:checked ~ .nav-links{
+        right: 0px;
+        box-shadow: -20px 0 40px rgba(0,0,0,0.3);
+
+    }
+    
 
     .nav-links {
-        //width: 551px;
         height: 52px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 41px;
+        z-index: 1;
+        transition: 0.5s;
+
+      
+
 
         a {
             font-family: Caveat;
@@ -110,21 +123,15 @@ nav{
         
         }
 
-
+        
         
     }
 }
 
 
-.navigation input:checked ~ .nav-links{
-    right: 0;
-    
-
 }
 
-}
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 920px) {
     nav{
         
     
@@ -133,6 +140,7 @@ nav{
         }
     
         .navigation{
+            position: relative;
     
             .hamburger{
             }
@@ -165,6 +173,7 @@ nav{
         }
     
          input:checked ~ .hamburger:after{
+           
         }
     
     
@@ -175,16 +184,14 @@ nav{
             width: 300px;
             height: 100%;
             top: 0;
+            // right: -300px;
             right: 0;
-
             background-color: $site-yellow;
             display: flex;
             flex-direction: column;
             justify-content: start;
             align-items: center;
             position: fixed;
-            top: 0;
-            right: 0;
         
     
             a {
@@ -198,7 +205,6 @@ nav{
             button {
             
             }
-    
     
             
         }

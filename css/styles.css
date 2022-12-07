@@ -69,7 +69,11 @@ nav .nav-logo {
   background-repeat: no-repeat;
   display: fixed;
 }
+nav .navigation {
+  position: relative;
+}
 nav .navigation .hamburger {
+  left: 50px;
   position: relative;
   width: 30px;
   height: 4px;
@@ -98,6 +102,7 @@ nav .navigation .hamburger:after {
   width: 30px;
 }
 nav .navigation .toggle-menu {
+  left: 50px;
   position: absolute;
   width: 30px;
   height: 100%;
@@ -122,12 +127,18 @@ nav .navigation input:checked ~ .hamburger:after {
   transform: rotate(45deg);
   width: 30px;
 }
+nav .navigation input:checked ~ .nav-links {
+  right: 0px;
+  box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
+}
 nav .navigation .nav-links {
   height: 52px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 41px;
+  z-index: 1;
+  transition: 0.5s;
 }
 nav .navigation .nav-links a {
   font-family: Caveat;
@@ -148,11 +159,11 @@ nav .navigation .nav-links button {
   filter: drop-shadow(0 10px 6px rgba(0, 0, 0, 0.16));
   cursor: pointer;
 }
-nav .navigation input:checked ~ .nav-links {
-  right: 0;
-}
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 920px) {
+  nav .navigation {
+    position: relative;
+  }
   nav .navigation .hamburger,
 nav .navigation .toggle-menu {
     display: block;
@@ -169,8 +180,6 @@ nav .navigation .toggle-menu {
     justify-content: start;
     align-items: center;
     position: fixed;
-    top: 0;
-    right: 0;
   }
 }
 .home {
