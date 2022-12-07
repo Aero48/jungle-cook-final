@@ -24,7 +24,7 @@ nav{
             position: relative;
             width: 30px;
             height: 4px;
-            background: #fff;
+            background: #000;
             border-radius: 10px;
             cursor: pointer;
             z-index: 2;
@@ -37,7 +37,7 @@ nav{
             position: absolute;
             height: 4px;
             right: 0;
-            background: #fff;
+            background: #000;
             border-radius: 10px ;
             transition: 0.3s;
         }
@@ -62,7 +62,7 @@ nav{
 
     .hamburger,
     .toggle-menu{
-        // display: none;
+        display: none;
 
     }
 
@@ -116,8 +116,99 @@ nav{
 }
 
 
+.navigation input:checked ~ .nav-links{
+    right: 0;
+    
 
+}
 
+}
+
+@media screen and (max-width: 800px) {
+    nav{
+        
+    
+        .nav-logo {
+          
+        }
+    
+        .navigation{
+    
+            .hamburger{
+            }
+    
+            .hamburger:before, 
+            .hamburger:after {
+               
+            }
+    
+            .hamburger:before{
+            
+            }
+            .hamburger:after{
+               
+            }
+        .toggle-menu{
+    
+        }
+    
+        .hamburger,
+        .toggle-menu{
+            display: block;
+    
+        }
+    
+        input:checked ~ .hamburger{
+        }
+    
+        input:checked ~ .hamburger:before{
+        }
+    
+         input:checked ~ .hamburger:after{
+        }
+    
+    
+       
+    
+        .nav-links {
+            padding-top: 65px;
+            width: 300px;
+            height: 100%;
+            top: 0;
+            right: 0;
+
+            background-color: $site-yellow;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+        
+    
+            a {
+              
+            }
+    
+            .underline:hover{
+            }
+    
+            
+            button {
+            
+            }
+    
+    
+            
+        }
+    }
+    
+    
+    
+    
+    }
+    
 }
 
 
