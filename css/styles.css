@@ -70,11 +70,22 @@ nav .nav-logo {
   display: fixed;
 }
 nav .navigation {
+  background-color: gray;
+  max-width: 700px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
+  margin: 20px;
 }
-nav .navigation .hamburger {
-  left: 50px;
+nav .navigation .hamburger-control {
+  left: 0;
   position: relative;
+  width: 30px;
+  height: 30px;
+}
+nav .navigation .hamburger-control .hamburger {
   width: 30px;
   height: 4px;
   background: #000;
@@ -83,26 +94,26 @@ nav .navigation .hamburger {
   z-index: 2;
   transition: 0.3s;
 }
-nav .navigation .hamburger:before,
-nav .navigation .hamburger:after {
+nav .navigation .hamburger-control .hamburger:before,
+nav .navigation .hamburger-control .hamburger:after {
   content: "";
   position: absolute;
   height: 4px;
-  right: 0;
+  right: 0px;
   background: #000;
   border-radius: 10px;
   transition: 0.3s;
 }
-nav .navigation .hamburger:before {
+nav .navigation .hamburger-control .hamburger:before {
   top: -10px;
   width: 30px;
 }
-nav .navigation .hamburger:after {
+nav .navigation .hamburger-control .hamburger:after {
   top: 10px;
   width: 30px;
 }
-nav .navigation .toggle-menu {
-  left: 50px;
+nav .navigation .hamburger-control .toggle-menu {
+  bottom: 15px;
   position: absolute;
   width: 30px;
   height: 100%;
@@ -110,35 +121,36 @@ nav .navigation .toggle-menu {
   cursor: pointer;
   opacity: 0;
 }
-nav .navigation .hamburger,
-nav .navigation .toggle-menu {
+nav .navigation .hamburger-control .hamburger,
+nav .navigation .hamburger-control .toggle-menu {
   display: none;
 }
-nav .navigation input:checked ~ .hamburger {
+nav .navigation .hamburger-control input:checked ~ .hamburger {
   background-color: transparent;
 }
-nav .navigation input:checked ~ .hamburger:before {
+nav .navigation .hamburger-control input:checked ~ .hamburger:before {
   top: 0;
   transform: rotate(-45deg);
   width: 30px;
 }
-nav .navigation input:checked ~ .hamburger:after {
+nav .navigation .hamburger-control input:checked ~ .hamburger:after {
   top: 0;
   transform: rotate(45deg);
   width: 30px;
 }
-nav .navigation input:checked ~ .nav-links {
-  right: 0px;
+nav .navigation .hamburger-control input:checked ~ .nav-links {
+  right: 300px;
   box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
 }
 nav .navigation .nav-links {
-  height: 52px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 41px;
   z-index: 1;
   transition: 0.5s;
+  padding-left: 20px;
 }
 nav .navigation .nav-links a {
   font-family: Caveat;
@@ -160,12 +172,12 @@ nav .navigation .nav-links button {
   cursor: pointer;
 }
 
-@media screen and (max-width: 920px) {
-  nav .navigation {
-    position: relative;
+@media screen and (max-width: 800px) {
+  nav .navigation .hamburger-control {
+    z-index: 5;
   }
-  nav .navigation .hamburger,
-nav .navigation .toggle-menu {
+  nav .navigation .hamburger-control .hamburger,
+nav .navigation .hamburger-control .toggle-menu {
     display: block;
   }
   nav .navigation .nav-links {
@@ -173,7 +185,7 @@ nav .navigation .toggle-menu {
     width: 300px;
     height: 100%;
     top: 0;
-    right: 0;
+    right: -300px;
     background-color: #FFD972;
     display: flex;
     flex-direction: column;
