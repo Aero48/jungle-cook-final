@@ -137,20 +137,22 @@ input:checked ~ .nav-menu{
     .nav-item{
         list-style: none;
 
+
+
         a {
             font-family: Caveat;
             font-size: 25px;
             color: $site-black;
 
 
-            .underline:hover{
-                border-bottom: 3px solid black;
-                
-            }
+           
     
             
         }
-
+        .underline:hover{
+            border-bottom: 3px solid black;
+            
+        }
        
 
         
@@ -254,6 +256,8 @@ header{
 
 
     .nav-item{
+
+
        
 
         a {
