@@ -103,6 +103,7 @@ header{
 
 input:checked ~ .nav-menu{
     right: 0px;
+    top: 0px;
     box-shadow: -20px 0 40px rgba(0,0,0,0.3);
 
 }
@@ -243,9 +244,10 @@ header{
     align-items: center;
     // gap: 41px;
     padding-top: 60px;
+    padding-bottom: 60px;
     background-color: $site-yellow;
     min-width: 300px;
-    height: 100%;
+    min-height: 100%;
     top: 0;
     right: -300px;
     // right: 0px;
