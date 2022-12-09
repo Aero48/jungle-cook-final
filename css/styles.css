@@ -70,7 +70,6 @@ nav .nav-logo {
   display: fixed;
 }
 nav .navigation {
-  background-color: gray;
   max-width: 700px;
   height: 100%;
   display: flex;
