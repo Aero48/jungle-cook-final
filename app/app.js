@@ -22,6 +22,8 @@ function changeRoute() {
     MODEL.changePage(pageID, subpageID, yourRecipeListeners);
   } else if (pageID == "recipe-edit") {
     MODEL.changePage(pageID, subpageID, editRecipeListeners);
+  } else if (pageID == "home") {
+    MODEL.changePage(pageID, subpageID, hamburgerMenu);
   } else {
     MODEL.changePage(pageID);
   }
@@ -234,7 +236,25 @@ function initURLListener() {
   changeRoute();
 }
 
+// hamburgerMenu
+function hamburgerMenu() {
+  // Get the checkbox
+  var checkBox = document.getElementById("checkbox");
+  // Get the output text
+  var menu = document.getElementById("menu");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true) {
+    menu.style.display = "block";
+  } else {
+    menu.style.display = "none";
+  }
+
+  console.log(checkBox);
+}
+
 // Runs initURLListener function when the page is ready
 $(document).ready(function () {
   initURLListener();
+  console.log(hamburgerMenu);
 });

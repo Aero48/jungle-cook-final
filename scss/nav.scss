@@ -101,12 +101,13 @@ header{
 
 }
 
-input:checked ~ .nav-menu{
-    right: 0px;
-    top: 0px;
-    box-shadow: -20px 0 40px rgba(0,0,0,0.3);
+/* Making the nav-menu appear when the hamburger is clicked. */
+// input:checked ~ .nav-menu{
+//     right: 0px;
+//     top: 0px;
+//     box-shadow: -20px 0 40px rgba(0,0,0,0.3);
 
-}
+// }
 
 
 
@@ -236,6 +237,7 @@ header{
 
 
     .nav-logo {
+        z-index: -1;
       
     }
     
@@ -251,8 +253,9 @@ header{
     min-width: 300px;
     min-height: 100%;
     top: 0;
-    right: -300px;
-    // right: 0px;
+    // right: -300px;
+    right: 0px;
+    z-index: -1;
 
 
     .nav-item{
