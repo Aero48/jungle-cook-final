@@ -13,6 +13,81 @@
   </head>
   <body>
     <div id="website">
+      <header>
+        <nav class="nav-bar">
+          <div class="nav-logo"></div>
+
+          <div class="hamburger-control">
+            <input type="checkbox" class="toggle-menu" />
+            <div class="hamburger"></div>
+          </div>
+
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a class="nav-link" class="underline" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" class="underline" href="#recipes">Browse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" class="underline" href="#recipe-create"
+                >Create Recipe</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                class="underline"
+                id="yourRecipes"
+                href="#your-recipes"
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#login" id="login-btn"
+                ><button>Login</button></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div id="app"></div>
+      <footer>
+        <p>Copyright © 2019 The Jungle Cook</p>
+        <div id="footer-links">
+          <a href="#login" id="login-footer">Login</a>
+          <a href="#recipes">Recipes by Category</a>
+          <a href="#recipe-create">Create Recipe</a>
+          <a id="yourRecipes-footer" href="#your-recipes"></a>
+        </div>
+        <div id="footer-social">
+          <a href=""><img src="images/facebook.svg" alt="" /></a>
+          <a href=""><img src="images/instagram.svg" alt="" /></a>
+        </div>
+      </footer>
+    </div>
+    <script src="lib/jquery-3.6.1.min.js"></script>
+    <script src="app/app.js" type="module"></script>
+    <script src="app/model.js" type="module"></script>
+  </body>
+</html>
+
+<!-- OLD VERSION OF HAMBURGER MENU -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jungle Cook</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="website">
       <nav>
         <div class="nav-logo"></div>
         <div class="navigation">
@@ -50,4 +125,4 @@
     <script src="app/app.js" type="module"></script>
     <script src="app/model.js" type="module"></script>
   </body>
-</html>
+</html> -->

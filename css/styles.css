@@ -51,7 +51,7 @@ a {
   margin-top: -132px;
 }
 
-nav {
+header {
   width: 100%;
   height: 132px;
   display: flex;
@@ -59,42 +59,32 @@ nav {
   justify-content: space-between;
   padding: 0 50px;
   z-index: 1;
-}
-nav .nav-logo {
-  width: 167px;
-  height: 55px;
-  background-image: url(../images/logo.svg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: fixed;
-}
-nav .navigation {
-  max-width: 700px;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: relative;
-  margin: 20px;
 }
-nav .navigation .hamburger-control {
+header .nav-bar {
+  min-height: 132px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .nav-bar .hamburger-control {
   left: 0;
   position: relative;
   width: 30px;
   height: 30px;
 }
-nav .navigation .hamburger-control .hamburger {
+header .nav-bar .hamburger-control .hamburger {
   width: 30px;
   height: 4px;
   background: #000;
   border-radius: 10px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 5;
   transition: 0.3s;
 }
-nav .navigation .hamburger-control .hamburger:before,
-nav .navigation .hamburger-control .hamburger:after {
+header .nav-bar .hamburger-control .hamburger:before,
+header .nav-bar .hamburger-control .hamburger:after {
   content: "";
   position: absolute;
   height: 4px;
@@ -103,63 +93,72 @@ nav .navigation .hamburger-control .hamburger:after {
   border-radius: 10px;
   transition: 0.3s;
 }
-nav .navigation .hamburger-control .hamburger:before {
+header .nav-bar .hamburger-control .hamburger:before {
   top: -10px;
   width: 30px;
 }
-nav .navigation .hamburger-control .hamburger:after {
+header .nav-bar .hamburger-control .hamburger:after {
   top: 10px;
   width: 30px;
 }
-nav .navigation .hamburger-control .toggle-menu {
+header .nav-bar .hamburger-control .toggle-menu {
   bottom: 15px;
   position: absolute;
   width: 30px;
   height: 100%;
-  z-index: 3;
+  z-index: 5;
   cursor: pointer;
   opacity: 0;
 }
-nav .navigation .hamburger-control .hamburger,
-nav .navigation .hamburger-control .toggle-menu {
+header .nav-bar .hamburger-control .hamburger,
+header .nav-bar .hamburger-control .toggle-menu {
   display: none;
 }
-nav .navigation .hamburger-control input:checked ~ .hamburger {
+header .nav-bar .hamburger-control input:checked ~ .hamburger {
   background-color: transparent;
 }
-nav .navigation .hamburger-control input:checked ~ .hamburger:before {
+header .nav-bar .hamburger-control input:checked ~ .hamburger:before {
   top: 0;
   transform: rotate(-45deg);
   width: 30px;
 }
-nav .navigation .hamburger-control input:checked ~ .hamburger:after {
+header .nav-bar .hamburger-control input:checked ~ .hamburger:after {
   top: 0;
   transform: rotate(45deg);
   width: 30px;
 }
-nav .navigation .hamburger-control input:checked ~ .nav-links {
-  right: 300px;
+header .nav-bar input:checked ~ .nav-menu {
+  right: 0px;
   box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
 }
-nav .navigation .nav-links {
-  height: 100px;
+header .nav-bar .nav-logo {
+  width: 170px;
+  height: 55px;
+  background-image: url(../images/logo.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: fixed;
+}
+header .nav-bar .nav-menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: row;
   align-items: center;
   gap: 41px;
-  z-index: 1;
-  transition: 0.5s;
-  padding-left: 20px;
 }
-nav .navigation .nav-links a {
+header .nav-bar .nav-menu .nav-item {
+  list-style: none;
+}
+header .nav-bar .nav-menu .nav-item a {
   font-family: Caveat;
   font-size: 25px;
   color: #000;
 }
-nav .navigation .nav-links .underline:hover {
+header .nav-bar .nav-menu .nav-item a .underline:hover {
   border-bottom: 3px solid black;
 }
-nav .navigation .nav-links button {
+header .nav-bar .nav-menu .nav-item button {
   width: 158px;
   height: 52px;
   border: none;
@@ -172,25 +171,28 @@ nav .navigation .nav-links button {
 }
 
 @media screen and (max-width: 800px) {
-  nav .navigation .hamburger-control {
+  header {
+    padding: 0 0 0 50px;
+  }
+  header .nav-bar .hamburger-control .hamburger {
     z-index: 5;
   }
-  nav .navigation .hamburger-control .hamburger,
-nav .navigation .hamburger-control .toggle-menu {
+  header .nav-bar .hamburger-control .hamburger,
+header .nav-bar .hamburger-control .toggle-menu {
     display: block;
+    z-index: 5;
   }
-  nav .navigation .nav-links {
-    padding-top: 65px;
-    width: 300px;
-    height: 100%;
-    top: 0;
-    right: -300px;
-    background-color: #FFD972;
-    display: flex;
+  header .nav-bar .nav-menu {
+    position: absolute;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    position: fixed;
+    padding-top: 60px;
+    background-color: #FFD972;
+    min-width: 300px;
+    height: 100%;
+    top: 0;
+    right: -300px;
   }
 }
 .home {
