@@ -236,14 +236,12 @@ function initURLListener() {
   changeRoute();
 }
 
-// hamburgerMenu
+// hamburgerMenu toggle back and forth
 function hamburgerMenu() {
-  // Get the checkbox
   var checkBox = document.getElementById("checkbox");
-  // Get the output text
+
   var menu = document.getElementById("menu");
 
-  // If the checkbox is checked, display the output text
   if (checkBox.checked == true) {
     menu.style.display = "block";
   } else {
