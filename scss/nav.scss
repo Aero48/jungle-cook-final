@@ -174,9 +174,28 @@ header{
 
 }
 
+// @media screen and (min-width: 800px) {
+//     #menu {
+//         display: flex;
+//     }
+// }
+
+
+// .menu-closed {
+//     display: flex;
+// }
+
+// .menu-open {
+//     display: flex;
+// }
+
 
 
 @media screen and (max-width: 800px) {
+
+#menu {
+    padding-top: 120px;
+}
 
 
 header{

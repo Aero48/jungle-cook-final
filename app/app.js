@@ -51,8 +51,7 @@ function createRecipeListeners() {
   //Click listeners that add new ingredient/step rows to the form
   $(".addBtn").on("click", (e) => {
     $(".recipe-create-formHolder .ingred ").append(
-      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${
-        ingredCnt + 1
+      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${ingredCnt + 1
       }" /> </div>`
     );
     ingredCnt++;
@@ -60,8 +59,7 @@ function createRecipeListeners() {
 
   $(".addSBtn").on("click", (e) => {
     $(".recipe-create-formHolder .steps").append(
-      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${
-        stepCnt + 1
+      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${stepCnt + 1
       }" /></div>`
     );
     stepCnt++;
@@ -115,8 +113,7 @@ function editRecipeListeners(ingredLength, stepsLength, id) {
   // Click listeners that add new ingredient/step rows to the form
   $(".addBtn").on("click", (e) => {
     $(".recipe-create-formHolder .ingred ").append(
-      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${
-        ingredCnt + 1
+      `<div class="recipe-input-container" ><input type="text" id="ingred${ingredCnt}" placeholder="Ingredient #${ingredCnt + 1
       }" /> </div>`
     );
     ingredCnt++;
@@ -124,8 +121,7 @@ function editRecipeListeners(ingredLength, stepsLength, id) {
 
   $(".addSBtn").on("click", (e) => {
     $(".recipe-create-formHolder .steps").append(
-      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${
-        stepCnt + 1
+      `<div class="recipe-input-container" ><input type="text" id="step${stepCnt}" placeholder="Instruction #${stepCnt + 1
       }" /></div>`
     );
     stepCnt++;
@@ -234,25 +230,57 @@ function initLoginListener() {
 function initURLListener() {
   $(window).on("hashchange", changeRoute);
   changeRoute();
+  hamburgerMenu();
+  checkWindowWidth();
 }
 
 // hamburgerMenu toggle back and forth
 function hamburgerMenu() {
-  var checkBox = document.getElementById("checkbox");
+  console.log("test");
+  var checkBox = document.getElementById("checkBox");
 
   var menu = document.getElementById("menu");
 
-  if (checkBox.checked == true) {
-    menu.style.display = "block";
+  var isChecked = false;
+
+  $("#checkBox").click(function () {
+    console.log("click")
+    if (isChecked == false) {
+      isChecked = true;
+      console.log("test");
+      menu.style.display = "flex";
+    } else {
+      isChecked = false;
+      console.log("test");
+      menu.style.display = "none";
+    }
+  })
+  // if (checkBox.checked == true) {
+  //   console.log("checked")
+  //   menu.style.display = "block";
+  // } else {
+  //   console.log("unchecked")
+  //   menu.style.display = "none";
+  // }
+
+  console.log(checkBox);
+}
+
+function checkWindowWidth() {
+  if ($(window).width() > 800) {
+    console.log("test");
+    menu.style.display = "flex";
   } else {
     menu.style.display = "none";
   }
-
-  console.log(checkBox);
 }
 
 // Runs initURLListener function when the page is ready
 $(document).ready(function () {
   initURLListener();
-  console.log(hamburgerMenu);
+  //console.log(hamburgerMenu);
 });
+
+$(window).resize(function () {
+  checkWindowWidth();
+})

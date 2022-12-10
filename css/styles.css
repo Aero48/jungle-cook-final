@@ -168,6 +168,9 @@ header .nav-bar .nav-menu .nav-item button {
 }
 
 @media screen and (max-width: 800px) {
+  #menu {
+    padding-top: 120px;
+  }
   header {
     padding: 0 0 0 50px;
   }
