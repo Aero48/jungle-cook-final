@@ -18,6 +18,8 @@ Emma Ash: This team project was a great experience for me. I feel like I was abl
 - Styling: Nav, Footer, Login, Browse, Your Recipes
 - Function: MVC Model, Recipe Injection, Make New Recipe
 
+Logan Douglass: My primary focus was the functionality side of the site. On the initial creation of the project, I did style the navbar, footer, login page, browse recipes, and user recipes but most of my work for the rest of the project was on the JavaScript code. For the main structure of the project, I built the initial MVC system for dynamically loading the page content. On the recipe list, recipe view, and your recipes page, I programmed the HTML injection for elements of the recipe array. I also helped Emma program the functionality of the create and edit recipe forms (mainly the system that allows you to add ingredient fields and instruction fields) and made both functions only accessible to users who are logged in. On the backend, I wrote the add, update, and delete recipe functions essential to the CRUD application. After all the essential features were implemented, I provided help to Emma’s side of the project with bug fixing on the login, signup, and hamburger menu.
+
 ### Web 4 Link:
 
 # Checklist Before Turning In:
