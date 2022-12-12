@@ -238,7 +238,6 @@ function initURLListener() {
 
 // hamburgerMenu toggle back and forth
 function hamburgerMenu() {
-  console.log("test");
   var checkBox = document.getElementById("checkBox");
 
   var menu = document.getElementById("menu");
