@@ -266,8 +266,7 @@ function displayRecipeDetails(subpageID) {
     if (recipe.id == subpageID) {
       $(".recipe-view").html(`<div class="description">
     <label for="recipe-view-title" id="recipe-view-title">${recipe.name}</label>
-    <div>
-      <img class="recipe-image" src="${recipe.img}" alt="" />
+    <div class="recipe-image" style="background-image: url(${recipe.img})">
     </div>
     <div class="recipe-description">
       <h2>Description:</h2>

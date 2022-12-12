@@ -992,6 +992,8 @@ header .nav-bar .hamburger-control .toggle-menu {
   width: 468px;
   height: 421px;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .recipe-view .description .recipe-description {
   width: 420px;
