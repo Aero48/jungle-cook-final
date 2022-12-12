@@ -1,5 +1,7 @@
 import * as MODEL from "./model.js";
 
+var isChecked = false;
+
 function changeRoute() {
   let pageURL = window.location.hash.replace("#", "");
   //Splits the page url up by slashes and puts the pieces into an array
@@ -241,37 +243,27 @@ function hamburgerMenu() {
 
   var menu = document.getElementById("menu");
 
-  var isChecked = false;
+
 
   $("#checkBox").click(function () {
-    console.log("click")
     if (isChecked == false) {
       isChecked = true;
-      console.log("test");
       menu.style.display = "flex";
     } else {
       isChecked = false;
-      console.log("test");
       menu.style.display = "none";
     }
   })
-  // if (checkBox.checked == true) {
-  //   console.log("checked")
-  //   menu.style.display = "block";
-  // } else {
-  //   console.log("unchecked")
-  //   menu.style.display = "none";
-  // }
-
-  console.log(checkBox);
 }
 
 function checkWindowWidth() {
   if ($(window).width() > 800) {
-    console.log("test");
-    menu.style.display = "flex";
+    $("#menu").css("display", "flex")
   } else {
-    menu.style.display = "none";
+    if (!isChecked) {
+      $("#menu").css("display", "none")
+    }
+
   }
 }
 

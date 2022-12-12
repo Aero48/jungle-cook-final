@@ -115,9 +115,9 @@ export function changePage(pageID, subpageID, callback) {
         $("#app").html(data);
         callback();
         if (loginInfo.firstName != null) {
-          $("#greeting").html(`Hey ${loginInfo.firstName}, edit your recipe!`);
+          $("#greeting").html(`Hey ${loginInfo.firstName}, create your recipe!`);
         } else {
-          $("#greeting").html(`Hey ${loginInfo.email}, edit your recipe!`);
+          $("#greeting").html(`Hey ${loginInfo.email}, create your recipe!`);
         }
 
       })
