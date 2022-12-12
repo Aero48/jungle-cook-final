@@ -1,18 +1,17 @@
-
+.formHolder{
+  width: 100%;
+  display: flex;
+    justify-content: center;
 
 .recipe-edit{
-  width: 100%;
-  min-height: 100vh;
-  padding-bottom: 214px;
-  padding-top: 214px;
-  padding-left: 149px;
-  padding-right: 149px;
-  margin: 0 auto;
+  width: 800px;
+    margin-top: 214px;
+     
 
 
   .recipe-create-formHolder{
     position: relative;
-    min-height: 100%;
+    min-height: 250px;
     max-width: 980px;
     
 
@@ -37,11 +36,9 @@
 
     .recipe-input-container{
       margin: 0 auto;
-      // background-color: aqua;
       height: 30px;
       max-width: 980px;
       margin-top: 100px;
-      margin-bottom: 100px;
       position: relative;
      
 
@@ -88,8 +85,6 @@
     #createRecipeBtn{
       @include recipe-button(422px, 52px, 25px);
       text-align: center;
-      margin-bottom: 200px;
-      // center?
       display: flex;
       align-items: center; 
       justify-content: center;
@@ -102,6 +97,8 @@
 
 }
 
+}
+
 @media screen and (max-width: 800px){
 
 
@@ -110,108 +107,109 @@
 
 @media screen and (max-width: 400px){
 
-  .recipe-edit{
-    width: 100%;
-    min-height: 100vh;
-    padding-bottom: 150px;
-    padding-top: 150px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 0 auto;
+  
+
+  .formHolder{
+    .recipe-edit{
+      width: 100%;
+      min-height: 100vh;
+      padding-bottom: 150px;
+      padding-top: 150px;
+      padding-left: 50px;
+      padding-right: 0;
+      margin: 0 auto;
   
   
   
-    .recipe-create-formHolder{
-      position: relative;
-      min-height: 100%;
-      max-width: 980px;
-      
-  
-      h1{
-        text-align: left;
-        font-size: 25px;
-        font-family: CaveatBold;
-        color: black;
-  
-      }
-  
-      h2{
-        text-align: left;
-        font-size: 20px;
-        font-family: LatoBlack;
-        color: black;
-        margin-bottom:50px;
-  
-      }
-      
-  
-  
-      .recipe-input-container{
-        margin: 0 auto;
-        // background-color: aqua;
-        height: 30px;
-        max-width: 980px;
-        margin-top: 100px;
-        margin-bottom: 100px;
+      .recipe-create-formHolder{
         position: relative;
-       
+        min-height: 100%;
+        min-width: 400px;
+        
   
-        input, #step0, #step1,#step2, #ingred0, #ingred1, #ingred2{
-            @include recipe-inputField(100%, 100%, 20px);
+        h1{
+          text-align: left;
+          font-size: 25px;
+          font-family: CaveatBold;
+          color: black;
   
         }
   
-        #addFile{
-            @include recipe-button(110px, 36px, 17px);
-            position: absolute;
-            top: -15px;
+        h2{
+          text-align: left;
+          font-size: 20px;
+          font-family: LatoBlack;
+          color: black;
+          margin-bottom:50px;
+  
+        }
+        
+  
+  
+        .recipe-input-container{
+          margin: 0 auto;
+          // background-color: aqua;
+          height: 30px;
+          max-width: 980px;
+          margin-top: 100px;
+          margin-bottom: 100px;
+          position: relative;
+         
+  
+          input, #step0, #step1,#step2, #ingred0, #ingred1, #ingred2{
+              @include recipe-inputField(100%, 100%, 20px);
+    
+          }
+  
+          #addFile{
+              @include recipe-button(110px, 36px, 17px);
+              position: absolute;
+              top: -15px;
             right: 0;
+          }
+  
+         
+  
         }
   
-       
+        .addBtn, .addSBtn{
+          @include recipe-button(38px, 38px, 25px);
+          width: 38px;
+          height: 38px;
+          font-size: 25px;
+          color: white;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          display: flex;
+          align-items: center; 
+          justify-content: center;
+  
+          p{
+            text-align: center;
+            padding-bottom: 3px;
+            padding-right: 2px;
+    
+          }
+      
+      }
+  
+  
+        #createRecipeBtn{
+          @include recipe-button(422px, 52px, 25px);
+          text-align: center;
+          margin-bottom: 300px;
+          display: flex;
+          align-items: center; 
+          justify-content: center;
+      }
   
       }
   
-      .addBtn, .addSBtn{
-        @include recipe-button(38px, 38px, 25px);
-        width: 38px;
-        height: 38px;
-        font-size: 25px;
-        color: white;
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        
-        display: flex;
-        align-items: center; 
-        justify-content: center;
-  
-        p{
-          text-align: center;
-          padding-bottom: 3px;
-          padding-right: 2px;
-  
-        }
     
-    }
-  
-  
-      #createRecipeBtn{
-        @include recipe-button(422px, 52px, 25px);
-        text-align: center;
-        margin-bottom: 200px;
-        // center?
-        display: flex;
-        align-items: center; 
-        justify-content: center;
-    }
-  
-    }
-  
-  
   
   
   }
-
+    }
 
 }

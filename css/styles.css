@@ -518,42 +518,41 @@ header .nav-bar .hamburger-control .toggle-menu {
     cursor: pointer;
   }
 }
-.recipe-create {
+.formHolder {
   width: 100%;
-  min-height: 100vh;
-  padding-bottom: 214px;
-  padding-top: 214px;
-  padding-left: 149px;
-  padding-right: 149px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
-.recipe-create .recipe-create-formHolder {
+.formHolder .recipe-create {
+  width: 800px;
+  margin-top: 214px;
+}
+.formHolder .recipe-create .recipe-create-formHolder {
   position: relative;
-  min-height: 100%;
+  min-height: 250px;
   max-width: 980px;
 }
-.recipe-create .recipe-create-formHolder h1 {
+.formHolder .recipe-create .recipe-create-formHolder h1 {
   text-align: left;
   font-size: 25px;
   font-family: CaveatBold;
   color: black;
 }
-.recipe-create .recipe-create-formHolder h2 {
+.formHolder .recipe-create .recipe-create-formHolder h2 {
   text-align: left;
   font-size: 20px;
   font-family: LatoBlack;
   color: black;
   margin-bottom: 50px;
 }
-.recipe-create .recipe-create-formHolder .recipe-input-container {
+.formHolder .recipe-create .recipe-create-formHolder .recipe-input-container {
   margin: 0 auto;
   height: 30px;
   max-width: 980px;
   margin-top: 100px;
-  margin-bottom: 100px;
   position: relative;
 }
-.recipe-create .recipe-create-formHolder .recipe-input-container input, .recipe-create .recipe-create-formHolder .recipe-input-container #step0, .recipe-create .recipe-create-formHolder .recipe-input-container #step1, .recipe-create .recipe-create-formHolder .recipe-input-container #step2, .recipe-create .recipe-create-formHolder .recipe-input-container #ingred0, .recipe-create .recipe-create-formHolder .recipe-input-container #ingred1, .recipe-create .recipe-create-formHolder .recipe-input-container #ingred2 {
+.formHolder .recipe-create .recipe-create-formHolder .recipe-input-container input, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #step0, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #step1, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #step2, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #ingred0, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #ingred1, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #ingred2 {
   width: 100%;
   height: 100%;
   font-family: LatoLight;
@@ -564,7 +563,7 @@ header .nav-bar .hamburger-control .toggle-menu {
   background-color: transparent;
   outline: none;
 }
-.recipe-create .recipe-create-formHolder .recipe-input-container #addFile {
+.formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #addFile {
   max-width: 110px;
   height: 36px;
   margin: 0 auto;
@@ -580,7 +579,7 @@ header .nav-bar .hamburger-control .toggle-menu {
   top: -15px;
   right: 0;
 }
-.recipe-create .recipe-create-formHolder .addBtn, .recipe-create .recipe-create-formHolder .addSBtn {
+.formHolder .recipe-create .recipe-create-formHolder .addBtn, .formHolder .recipe-create .recipe-create-formHolder .addSBtn {
   max-width: 38px;
   height: 38px;
   margin: 0 auto;
@@ -603,12 +602,12 @@ header .nav-bar .hamburger-control .toggle-menu {
   align-items: center;
   justify-content: center;
 }
-.recipe-create .recipe-create-formHolder .addBtn p, .recipe-create .recipe-create-formHolder .addSBtn p {
+.formHolder .recipe-create .recipe-create-formHolder .addBtn p, .formHolder .recipe-create .recipe-create-formHolder .addSBtn p {
   text-align: center;
   padding-bottom: 3px;
   padding-right: 2px;
 }
-.recipe-create .recipe-create-formHolder #createRecipeBtn {
+.formHolder .recipe-create .recipe-create-formHolder #createRecipeBtn {
   max-width: 422px;
   height: 52px;
   margin: 0 auto;
@@ -621,14 +620,13 @@ header .nav-bar .hamburger-control .toggle-menu {
   cursor: pointer;
   outline: none;
   text-align: center;
-  margin-bottom: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 @media screen and (max-width: 400px) {
-  .recipe-create {
+  .formHolder .recipe-create {
     width: 100%;
     min-height: 100vh;
     padding-bottom: 150px;
@@ -637,25 +635,25 @@ header .nav-bar .hamburger-control .toggle-menu {
     padding-right: 0;
     margin: 0 auto;
   }
-  .recipe-create .recipe-create-formHolder {
+  .formHolder .recipe-create .recipe-create-formHolder {
     position: relative;
     min-height: 100%;
-    max-width: 980px;
+    min-width: 400px;
   }
-  .recipe-create .recipe-create-formHolder h1 {
+  .formHolder .recipe-create .recipe-create-formHolder h1 {
     text-align: left;
     font-size: 25px;
     font-family: CaveatBold;
     color: black;
   }
-  .recipe-create .recipe-create-formHolder h2 {
+  .formHolder .recipe-create .recipe-create-formHolder h2 {
     text-align: left;
     font-size: 20px;
     font-family: LatoBlack;
     color: black;
     margin-bottom: 50px;
   }
-  .recipe-create .recipe-create-formHolder .recipe-input-container {
+  .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container {
     margin: 0 auto;
     height: 30px;
     max-width: 980px;
@@ -663,7 +661,7 @@ header .nav-bar .hamburger-control .toggle-menu {
     margin-bottom: 100px;
     position: relative;
   }
-  .recipe-create .recipe-create-formHolder .recipe-input-container input, .recipe-create .recipe-create-formHolder .recipe-input-container #step0, .recipe-create .recipe-create-formHolder .recipe-input-container #step1, .recipe-create .recipe-create-formHolder .recipe-input-container #step2, .recipe-create .recipe-create-formHolder .recipe-input-container #ingred0, .recipe-create .recipe-create-formHolder .recipe-input-container #ingred1, .recipe-create .recipe-create-formHolder .recipe-input-container #ingred2 {
+  .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container input, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #step0, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #step1, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #step2, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #ingred0, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #ingred1, .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #ingred2 {
     width: 100%;
     height: 100%;
     font-family: LatoLight;
@@ -674,7 +672,7 @@ header .nav-bar .hamburger-control .toggle-menu {
     background-color: transparent;
     outline: none;
   }
-  .recipe-create .recipe-create-formHolder .recipe-input-container #addFile {
+  .formHolder .recipe-create .recipe-create-formHolder .recipe-input-container #addFile {
     max-width: 110px;
     height: 36px;
     margin: 0 auto;
@@ -690,7 +688,7 @@ header .nav-bar .hamburger-control .toggle-menu {
     top: -15px;
     right: 0;
   }
-  .recipe-create .recipe-create-formHolder .addBtn, .recipe-create .recipe-create-formHolder .addSBtn {
+  .formHolder .recipe-create .recipe-create-formHolder .addBtn, .formHolder .recipe-create .recipe-create-formHolder .addSBtn {
     max-width: 38px;
     height: 38px;
     margin: 0 auto;
@@ -713,12 +711,12 @@ header .nav-bar .hamburger-control .toggle-menu {
     align-items: center;
     justify-content: center;
   }
-  .recipe-create .recipe-create-formHolder .addBtn p, .recipe-create .recipe-create-formHolder .addSBtn p {
+  .formHolder .recipe-create .recipe-create-formHolder .addBtn p, .formHolder .recipe-create .recipe-create-formHolder .addSBtn p {
     text-align: center;
     padding-bottom: 3px;
     padding-right: 2px;
   }
-  .recipe-create .recipe-create-formHolder #createRecipeBtn {
+  .formHolder .recipe-create .recipe-create-formHolder #createRecipeBtn {
     max-width: 422px;
     height: 52px;
     margin: 0 auto;
@@ -737,42 +735,41 @@ header .nav-bar .hamburger-control .toggle-menu {
     justify-content: center;
   }
 }
-.recipe-edit {
+.formHolder {
   width: 100%;
-  min-height: 100vh;
-  padding-bottom: 214px;
-  padding-top: 214px;
-  padding-left: 149px;
-  padding-right: 149px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
-.recipe-edit .recipe-create-formHolder {
+.formHolder .recipe-edit {
+  width: 800px;
+  margin-top: 214px;
+}
+.formHolder .recipe-edit .recipe-create-formHolder {
   position: relative;
-  min-height: 100%;
+  min-height: 250px;
   max-width: 980px;
 }
-.recipe-edit .recipe-create-formHolder h1 {
+.formHolder .recipe-edit .recipe-create-formHolder h1 {
   text-align: left;
   font-size: 25px;
   font-family: CaveatBold;
   color: black;
 }
-.recipe-edit .recipe-create-formHolder h2 {
+.formHolder .recipe-edit .recipe-create-formHolder h2 {
   text-align: left;
   font-size: 20px;
   font-family: LatoBlack;
   color: black;
   margin-bottom: 50px;
 }
-.recipe-edit .recipe-create-formHolder .recipe-input-container {
+.formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container {
   margin: 0 auto;
   height: 30px;
   max-width: 980px;
   margin-top: 100px;
-  margin-bottom: 100px;
   position: relative;
 }
-.recipe-edit .recipe-create-formHolder .recipe-input-container input, .recipe-edit .recipe-create-formHolder .recipe-input-container #step0, .recipe-edit .recipe-create-formHolder .recipe-input-container #step1, .recipe-edit .recipe-create-formHolder .recipe-input-container #step2, .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred0, .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred1, .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred2 {
+.formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container input, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #step0, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #step1, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #step2, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred0, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred1, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred2 {
   width: 100%;
   height: 100%;
   font-family: LatoLight;
@@ -783,7 +780,7 @@ header .nav-bar .hamburger-control .toggle-menu {
   background-color: transparent;
   outline: none;
 }
-.recipe-edit .recipe-create-formHolder .recipe-input-container #addFile {
+.formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #addFile {
   max-width: 110px;
   height: 36px;
   margin: 0 auto;
@@ -799,7 +796,7 @@ header .nav-bar .hamburger-control .toggle-menu {
   top: -15px;
   right: 0;
 }
-.recipe-edit .recipe-create-formHolder .addBtn, .recipe-edit .recipe-create-formHolder .addSBtn {
+.formHolder .recipe-edit .recipe-create-formHolder .addBtn, .formHolder .recipe-edit .recipe-create-formHolder .addSBtn {
   max-width: 38px;
   height: 38px;
   margin: 0 auto;
@@ -822,12 +819,12 @@ header .nav-bar .hamburger-control .toggle-menu {
   align-items: center;
   justify-content: center;
 }
-.recipe-edit .recipe-create-formHolder .addBtn p, .recipe-edit .recipe-create-formHolder .addSBtn p {
+.formHolder .recipe-edit .recipe-create-formHolder .addBtn p, .formHolder .recipe-edit .recipe-create-formHolder .addSBtn p {
   text-align: center;
   padding-bottom: 3px;
   padding-right: 2px;
 }
-.recipe-edit .recipe-create-formHolder #createRecipeBtn {
+.formHolder .recipe-edit .recipe-create-formHolder #createRecipeBtn {
   max-width: 422px;
   height: 52px;
   margin: 0 auto;
@@ -840,41 +837,40 @@ header .nav-bar .hamburger-control .toggle-menu {
   cursor: pointer;
   outline: none;
   text-align: center;
-  margin-bottom: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 @media screen and (max-width: 400px) {
-  .recipe-edit {
+  .formHolder .recipe-edit {
     width: 100%;
     min-height: 100vh;
     padding-bottom: 150px;
     padding-top: 150px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 50px;
+    padding-right: 0;
     margin: 0 auto;
   }
-  .recipe-edit .recipe-create-formHolder {
+  .formHolder .recipe-edit .recipe-create-formHolder {
     position: relative;
     min-height: 100%;
-    max-width: 980px;
+    min-width: 400px;
   }
-  .recipe-edit .recipe-create-formHolder h1 {
+  .formHolder .recipe-edit .recipe-create-formHolder h1 {
     text-align: left;
     font-size: 25px;
     font-family: CaveatBold;
     color: black;
   }
-  .recipe-edit .recipe-create-formHolder h2 {
+  .formHolder .recipe-edit .recipe-create-formHolder h2 {
     text-align: left;
     font-size: 20px;
     font-family: LatoBlack;
     color: black;
     margin-bottom: 50px;
   }
-  .recipe-edit .recipe-create-formHolder .recipe-input-container {
+  .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container {
     margin: 0 auto;
     height: 30px;
     max-width: 980px;
@@ -882,7 +878,7 @@ header .nav-bar .hamburger-control .toggle-menu {
     margin-bottom: 100px;
     position: relative;
   }
-  .recipe-edit .recipe-create-formHolder .recipe-input-container input, .recipe-edit .recipe-create-formHolder .recipe-input-container #step0, .recipe-edit .recipe-create-formHolder .recipe-input-container #step1, .recipe-edit .recipe-create-formHolder .recipe-input-container #step2, .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred0, .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred1, .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred2 {
+  .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container input, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #step0, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #step1, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #step2, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred0, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred1, .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #ingred2 {
     width: 100%;
     height: 100%;
     font-family: LatoLight;
@@ -893,7 +889,7 @@ header .nav-bar .hamburger-control .toggle-menu {
     background-color: transparent;
     outline: none;
   }
-  .recipe-edit .recipe-create-formHolder .recipe-input-container #addFile {
+  .formHolder .recipe-edit .recipe-create-formHolder .recipe-input-container #addFile {
     max-width: 110px;
     height: 36px;
     margin: 0 auto;
@@ -909,7 +905,7 @@ header .nav-bar .hamburger-control .toggle-menu {
     top: -15px;
     right: 0;
   }
-  .recipe-edit .recipe-create-formHolder .addBtn, .recipe-edit .recipe-create-formHolder .addSBtn {
+  .formHolder .recipe-edit .recipe-create-formHolder .addBtn, .formHolder .recipe-edit .recipe-create-formHolder .addSBtn {
     max-width: 38px;
     height: 38px;
     margin: 0 auto;
@@ -932,12 +928,12 @@ header .nav-bar .hamburger-control .toggle-menu {
     align-items: center;
     justify-content: center;
   }
-  .recipe-edit .recipe-create-formHolder .addBtn p, .recipe-edit .recipe-create-formHolder .addSBtn p {
+  .formHolder .recipe-edit .recipe-create-formHolder .addBtn p, .formHolder .recipe-edit .recipe-create-formHolder .addSBtn p {
     text-align: center;
     padding-bottom: 3px;
     padding-right: 2px;
   }
-  .recipe-edit .recipe-create-formHolder #createRecipeBtn {
+  .formHolder .recipe-edit .recipe-create-formHolder #createRecipeBtn {
     max-width: 422px;
     height: 52px;
     margin: 0 auto;
@@ -950,7 +946,7 @@ header .nav-bar .hamburger-control .toggle-menu {
     cursor: pointer;
     outline: none;
     text-align: center;
-    margin-bottom: 200px;
+    margin-bottom: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
