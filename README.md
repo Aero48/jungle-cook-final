@@ -2,7 +2,7 @@
 
 ## Task
 
-For this final, your team will be taking this prototype, https://xd.adobe.com/spec/000d9233-c620-4eb6-5884-adaea1a04abb-763c/Links to an external site., and making it fully functional. This site must be fully responsive for desktops and tablets, 1024×768, and must be a fully working CRUD application.
+Jungle Cook is a fully dynamic CRUD application centered around creating and editing recipes. If the user is not logged in, they can view recipes in the list as well as their details but they cannot edit anything about them. When the user is logged in, the ability to create new recipes and edit/delete their own existing recipes is granted unlocking most of the CRUD features. The page is dynamically loaded and fully responsive down to 360px in width.
 
 ## Who Worked on What:
 
