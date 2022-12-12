@@ -257,7 +257,7 @@ function hamburgerMenu() {
 }
 
 function checkWindowWidth() {
-  if ($(window).width() > 800) {
+  if ($(window).width() > 785) {
     $("#menu").css("display", "flex")
   } else {
     if (!isChecked) {
