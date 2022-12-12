@@ -9,7 +9,7 @@ var recipes = [
   {
     id: 0,
     name: "Supreme Pizza",
-    img: "../images/recipe-pizza.jpg",
+    img: "images/recipe-pizza.jpg",
     description:
       "Make pizza night super duper out of this world with homemade pizza. This recipe is supreme with vegetables and two types of meat. Yum!",
     totalTime: "1h24min",

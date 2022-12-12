@@ -207,7 +207,8 @@ header .nav-bar .hamburger-control .toggle-menu {
   margin: 0 auto;
   background-image: linear-gradient(rgba(242, 92, 84, 0.4), rgba(242, 92, 84, 0.4)), url(../images/hero.jpg);
   width: 100%;
-  min-height: 800px;
+  height: 800px;
+  min-height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
