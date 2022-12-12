@@ -44,7 +44,7 @@ var recipes = [
     userId: 0,
   },
   {
-    id: 0,
+    id: 1,
     name: "Fettuccine Alfredo",
     img: "https://www.themealdb.com/images/media/meals/0jv5gx1661040802.jpg",
     description: "A Delicious Italian dish.",
@@ -65,7 +65,7 @@ var recipes = [
       "Let the sauce thicken slightly and then add the pasta and toss until coated in sauce.",
       "Garnish with parsley, and it's ready.",
     ],
-    userId: 1,
+    userId: 0,
   },
 ];
 
